@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thalles JB — Editor de Vídeo Criativo</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f3ee;
+    --accent: #ff4d1c;
+    --gray: #1a1a1a;
+    --gray2: #2a2a2a;
+    --muted: #666;
+    --font-head: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--black); color: var(--white); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 20px; letter-spacing: -0.5px; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+    color: rgba(245,243,238,0.55); text-decoration: none; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 40px 80px; position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; top: 0; right: 0; bottom: 0; width: 55%; pointer-events: none;
+    background: radial-gradient(ellipse at 70% 40%, rgba(255,77,28,0.12) 0%, transparent 60%);
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,77,28,0.4); border-radius: 100px;
+    padding: 6px 16px; margin-bottom: 32px;
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); width: fit-content;
+  }
+  .hero-tag::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .hero h1 {
+    font-family: var(--font-head); font-size: clamp(56px, 9vw, 96px);
+    font-weight: 800; line-height: 0.95; letter-spacing: -3px; margin-bottom: 28px;
+  }
+  .hero h1 .line2 { color: var(--accent); }
+  .hero h1 .line3 { -webkit-text-stroke: 1px rgba(245,243,238,0.3); color: transparent; }
+
+  .hero-desc {
+    max-width: 480px; font-size: 16px; line-height: 1.7;
+    color: rgba(245,243,238,0.6); margin-bottom: 48px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: var(--white);
+    padding: 14px 28px; border-radius: 4px;
+    font-size: 14px; font-weight: 500; letter-spacing: 0.03em;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(245,243,238,0.2); color: var(--white);
+    padding: 14px 28px; border-radius: 4px;
+    font-size: 14px; font-weight: 500; letter-spacing: 0.03em;
+    text-decoration: none; cursor: pointer;
+    transition: border-color 0.2s, background 0.2s; background: transparent;
+  }
+  .btn-outline:hover { border-color: rgba(245,243,238,0.5); background: rgba(255,255,255,0.04); }
+
+  .hero-stats {
+    display: flex; gap: 48px; margin-top: 72px;
+    padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-num { font-family: var(--font-head); font-size: 40px; font-weight: 800; color: var(--white); line-height: 1; }
+  .stat-num span { color: var(--accent); }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* SECTIONS */
+  section { padding: 100px 40px; }
+  .section-label {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; height: 1px; width: 40px; background: var(--accent); display: block; }
+  .section-title {
+    font-family: var(--font-head); font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 16px;
+  }
+
+  /* SOBRE */
+  .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 56px; }
+  .sobre-text p { font-size: 16px; line-height: 1.8; color: rgba(245,243,238,0.65); margin-bottom: 20px; }
+  .sobre-text p strong { color: var(--white); font-weight: 500; }
+
+  .sobre-skills { display: flex; flex-direction: column; gap: 20px; }
+  .skill-item { display: flex; flex-direction: column; gap: 8px; }
+  .skill-top { display: flex; justify-content: space-between; font-size: 13px; }
+  .skill-name { color: var(--white); font-weight: 500; }
+  .skill-pct { color: var(--muted); }
+  .skill-bar { height: 2px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+  .skill-fill {
+    height: 100%; border-radius: 2px; background: var(--accent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.8s cubic-bezier(0.4,0,0.2,1);
+  }
+  .skill-fill.animated { transform: scaleX(1); }
+
+  /* SERVIÇOS */
+  .services-bg { background: var(--gray); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06); margin-top: 56px;
+  }
+  .service-card {
+    background: var(--gray); padding: 40px 32px;
+    position: relative; overflow: hidden; transition: background 0.3s;
+  }
+  .service-card:hover { background: var(--gray2); }
+  .service-card::before {
+    content: attr(data-num); position: absolute; top: 24px; right: 24px;
+    font-family: var(--font-head); font-size: 64px; font-weight: 800;
+    color: rgba(255,77,28,0.06); line-height: 1;
+  }
+  .service-icon {
+    width: 44px; height: 44px; border: 1px solid rgba(255,77,28,0.3);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 28px; font-size: 20px;
+  }
+  .service-card h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.3px; }
+  .service-card p { font-size: 14px; line-height: 1.7; color: rgba(245,243,238,0.5); }
+  .service-tag {
+    display: inline-block; margin-top: 20px; padding: 4px 12px;
+    border: 1px solid rgba(255,77,28,0.25); border-radius: 100px;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+  }
+
+  /* RESULTADOS */
+  .case-card {
+    background: var(--gray); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px; padding: 40px; margin-top: 56px;
+  }
+  .case-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 36px; flex-wrap: wrap; }
+  .case-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,77,28,0.3); border-radius: 100px;
+    padding: 6px 16px; font-size: 12px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 12px; width: fit-content;
+  }
+  .case-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .case-title { font-family: var(--font-head); font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+  .case-desc { font-size: 14px; color: rgba(245,243,238,0.55); margin-top: 6px; line-height: 1.6; max-width: 420px; }
+  .metrics { display: flex; gap: 24px; flex-wrap: wrap; }
+  .metric {
+    background: rgba(255,77,28,0.08); border: 1px solid rgba(255,77,28,0.15);
+    border-radius: 4px; padding: 16px 24px; text-align: center;
+  }
+  .metric-val { font-family: var(--font-head); font-size: 28px; font-weight: 800; color: var(--accent); line-height: 1; }
+  .metric-label { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+  .chart-wrap { position: relative; height: 280px; margin-top: 8px; }
+  .chart-note { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); margin-top: 16px; }
+  .chart-note::before { content: ''; width: 20px; height: 2px; background: var(--accent); display: block; }
+
+  /* PORTFÓLIO */
+  .portfolio-tabs {
+    display: flex; gap: 8px; margin-top: 48px; flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 8px 20px; border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: transparent; color: rgba(245,243,238,0.5);
+    font-family: var(--font-body); font-size: 13px; font-weight: 500;
+    cursor: pointer; transition: all 0.2s; letter-spacing: 0.03em;
+  }
+  .tab-btn:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
+  .tab-btn.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
+
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 16px; margin-top: 24px;
+  }
+  .video-card {
+    background: var(--gray2); border-radius: 4px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    display: none;
+  }
+  .video-card.active { display: block; }
+  .video-card.featured { grid-column: span 2; }
+
+  .video-thumb {
+    position: relative; aspect-ratio: 16/9; background: #111;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    overflow: hidden;
+  }
+  .video-thumb iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+    display: none;
+  }
+  .video-thumb.playing iframe { display: block; }
+  .video-thumb.playing .thumb-overlay { display: none; }
+
+  .thumb-overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 16px; background: rgba(10,10,10,0.6);
+    transition: background 0.3s;
+  }
+  .video-thumb:hover .thumb-overlay { background: rgba(10,10,10,0.4); }
+  .thumb-icon-big { font-size: 36px; opacity: 0.3; }
+  .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .play-btn:hover { transform: scale(1.1); }
+  .play-btn svg { margin-left: 4px; }
+
+  .video-info { padding: 16px 20px; }
+  .video-cat { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .video-title { font-size: 14px; font-weight: 500; color: var(--white); }
+
+  /* CONTATO */
+  .contact-section { background: var(--gray); }
+  .contact-inner { max-width: 680px; margin-top: 56px; }
+  .contact-item {
+    display: flex; align-items: center; gap: 20px;
+    padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .contact-icon {
+    width: 44px; height: 44px; border-radius: 8px;
+    background: rgba(255,77,28,0.1); border: 1px solid rgba(255,77,28,0.2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 18px;
+  }
+  .contact-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .contact-value { font-size: 16px; font-weight: 500; color: var(--white); }
+  .contact-value a { color: inherit; text-decoration: none; }
+  .contact-value a:hover { color: var(--accent); }
+
+  .cta-block {
+    margin-top: 56px; padding: 48px; background: var(--accent); border-radius: 4px;
+    display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
+  }
+  .cta-text h3 { font-family: var(--font-head); font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .cta-text p { font-size: 15px; opacity: 0.8; }
+  .btn-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--black); color: var(--white);
+    padding: 14px 28px; border-radius: 4px;
+    font-size: 14px; font-weight: 500; text-decoration: none; flex-shrink: 0;
+    transition: transform 0.15s;
+  }
+  .btn-white:hover { transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    padding: 40px; border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+  }
+  footer p { font-size: 13px; color: var(--muted); }
+  .footer-logo { font-family: var(--font-head); font-size: 16px; font-weight: 800; }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 20px 60px; }
+    section { padding: 72px 20px; }
+    .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .video-card.featured { grid-column: span 1; }
+    .hero-stats { gap: 32px; }
+    .cta-block { padding: 32px; }
+    footer { padding: 28px 20px; }
+    .case-header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Thalles<span>JB</span></div>
+  <div class="nav-links">
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#trabalhos">Portfólio</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-tag">Disponível para projetos</div>
+  <h1>
+    <div>Editor</div>
+    <div class="line2">de Vídeo</div>
+    <div class="line3">Criativo</div>
+  </h1>
+  <p class="hero-desc">
+    Transformo ideias em vídeos dinâmicos e envolventes para Reels, TikTok e podcasts — alinhados às tendências digitais que geram resultado real.
+  </p>
+  <div class="hero-actions">
+    <a href="#trabalhos" class="btn-primary">Ver trabalhos →</a>
+    <a href="#contato" class="btn-outline">Falar comigo</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">3<span>+</span></div>
+      <div class="stat-label">Anos de experiência</div>
+    </div>
+    <div>
+      <div class="stat-num">46<span>+</span></div>
+      <div class="stat-label">Vídeos produzidos</div>
+    </div>
+    <div>
+      <div class="stat-num">100<span>%</span></div>
+      <div class="stat-label">Dedicação em cada projeto</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="section-label">Sobre mim</div>
+  <h2 class="section-title">Criatividade com<br>estratégia de mercado</h2>
+  <div class="sobre-grid">
+    <div class="sobre-text">
+      <p>Sou <strong>Thalles JB</strong>, editor de vídeo criativo especializado em conteúdos para <strong>Reels, TikTok</strong> e cortes de podcasts. Minha paixão é transformar ideias em vídeos dinâmicos e envolventes, alinhados às tendências digitais.</p>
+      <p>Com uma visão estratégica de mercado, crio materiais que não apenas chamam atenção — mas que geram <strong>conexão real com o público</strong>. Cada projeto é tratado com dedicação, foco em inovação e qualidade.</p>
+      <p>Além da edição, tenho experiência em <strong>vendas online</strong>, o que me dá um olhar diferenciado sobre engajamento, conversão e comportamento de audiência.</p>
+    </div>
+    <div class="sobre-skills">
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">Reels & TikTok</span><span class="skill-pct">95%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">Cortes de Podcast</span><span class="skill-pct">90%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">VSL & Anúncios Ads</span><span class="skill-pct">88%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">Motion & Efeitos</span><span class="skill-pct">82%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">Estratégia de Conteúdo</span><span class="skill-pct">80%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="services-bg">
+  <div class="section-label">O que ofereço</div>
+  <h2 class="section-title">Serviços</h2>
+  <div class="services-grid">
+    <div class="service-card" data-num="01">
+      <div class="service-icon">🎬</div>
+      <h3>Reels & TikTok</h3>
+      <p>Vídeos curtos otimizados para engajar, com letras animadas, efeitos visuais, correção de cor e qualidade profissional.</p>
+      <span class="service-tag">Short-form</span>
+    </div>
+    <div class="service-card" data-num="02">
+      <div class="service-icon">🎙️</div>
+      <h3>Cortes de Podcast</h3>
+      <p>Transformo episódios longos em clipes irresistíveis para redes sociais — mantendo a essência e gerando curiosidade.</p>
+      <span class="service-tag">Podcast</span>
+    </div>
+    <div class="service-card" data-num="03">
+      <div class="service-icon">📢</div>
+      <h3>VSL & Anúncios Ads</h3>
+      <p>Vídeos de vendas e anúncios com foco em conversão — roteiro visual, ritmo e gatilhos que vendem.</p>
+      <span class="service-tag">Conversão</span>
+    </div>
+    <div class="service-card" data-num="04">
+      <div class="service-icon">🎞️</div>
+      <h3>Vídeos Diversos</h3>
+      <p>Produções sob medida para diferentes formatos e objetivos — desde vídeos institucionais até conteúdos criativos.</p>
+      <span class="service-tag">Versátil</span>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section id="resultados">
+  <div class="section-label">Experiência atual</div>
+  <h2 class="section-title">Resultado real,<br>número na mesa</h2>
+  <div class="case-card">
+    <div class="case-header">
+      <div>
+        <div class="case-badge">Cliente UGC</div>
+        <div class="case-title">Faturamento 4× em 3 meses</div>
+        <div class="case-desc">Produção de vídeos criativos para redes sociais com foco em conversão e engajamento — resultado: faturamento quadruplicado em menos de 2 meses.</div>
+      </div>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-val">+350%</div>
+          <div class="metric-label">crescimento</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">R$450k</div>
+          <div class="metric-label">pico atingido</div>
+        </div>
+      </div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="revenueChart"></canvas>
+    </div>
+    <div class="chart-note">Faturamento mensal do cliente após início da produção de vídeos criativos</div>
+  </div>
+</section>
+
+<!-- PORTFÓLIO -->
+<section id="trabalhos" style="background: var(--gray);">
+  <div class="section-label">Portfólio</div>
+  <h2 class="section-title">Trabalhos realizados</h2>
+
+  <div class="portfolio-tabs">
+    <button class="tab-btn active" onclick="filterVideos('podcast')">Cortes de Podcast</button>
+    <button class="tab-btn" onclick="filterVideos('reels')">Reels & TikTok</button>
+    <button class="tab-btn" onclick="filterVideos('vsl')">VSL & Anúncios</button>
+    <button class="tab-btn" onclick="filterVideos('diversos')">Vídeos Diversos</button>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <!-- PODCAST -->
+    <div class="video-card active featured" data-cat="podcast">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/18tfnv4gFsiUstEmWIAtYsLOHf0l5ddTl/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">🎙️</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">Corte de Podcast</div>
+        <div class="video-title">Corte 01</div>
+      </div>
+    </div>
+
+    <div class="video-card active" data-cat="podcast">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1brmToS_w7cO1jZFig3mDDnF6bEr6ED7s/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">🎙️</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">Corte de Podcast</div>
+        <div class="video-title">Corte 02</div>
+      </div>
+    </div>
+
+    <div class="video-card active" data-cat="podcast">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1GTv6cZTkBrc_JRDvB-iTrVVZss4yMGX5/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">🎙️</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">Corte de Podcast</div>
+        <div class="video-title">Corte 03</div>
+      </div>
+    </div>
+
+    <div class="video-card active" data-cat="podcast">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1IeEl-SDtTfYc8U04V_Oe5oaPemHA5iO4/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">🎙️</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">Corte de Podcast</div>
+        <div class="video-title">Corte 04</div>
+      </div>
+    </div>
+
+    <div class="video-card active" data-cat="podcast">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1bh2O5GDTuZucpe19T2s1fBnqvbSS9UcI/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">🎙️</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">Corte de Podcast</div>
+        <div class="video-title">Corte 05</div>
+      </div>
+    </div>
+
+    <!-- REELS -->
+    <div class="video-card" data-cat="reels">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1P9SVbuY2DN8dhj7GkLL5cJMxN5HSamvC/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">📱</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">Reels & TikTok</div>
+        <div class="video-title">Vídeo Criativo</div>
+      </div>
+    </div>
+
+    <!-- VSL -->
+    <div class="video-card" data-cat="vsl">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1FTfCtFxCLxs6gosiTlHn1JXG7yrvN2kX/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">📢</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">VSL & Anúncio</div>
+        <div class="video-title">VSL 01</div>
+      </div>
+    </div>
+
+    <div class="video-card" data-cat="vsl">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1y0uqLwoj7PDUfbQYws4dMBkpX9CW4tYj/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">📢</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">VSL & Anúncio</div>
+        <div class="video-title">VSL 02</div>
+      </div>
+    </div>
+
+    <!-- DIVERSOS -->
+    <div class="video-card" data-cat="diversos">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1tXfEANiCvv-wps6MgqWpZNXVhY7kl1gU/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">🎬</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">Vídeo Diverso</div>
+        <div class="video-title">Vídeo 01</div>
+      </div>
+    </div>
+
+    <div class="video-card" data-cat="diversos">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1HsXZZqhFz9yimTevSBJv_mfIrisnKi64/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">🎬</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">Vídeo Diverso</div>
+        <div class="video-title">Vídeo 02</div>
+      </div>
+    </div>
+
+    <div class="video-card" data-cat="diversos">
+      <div class="video-thumb" onclick="playVideo(this, 'https://drive.google.com/file/d/1uumD99_kKsA9gg5o-0TN1P51xNbKstvy/preview')">
+        <div class="thumb-overlay">
+          <div class="thumb-icon-big">🎬</div>
+          <button class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="white"/></svg></button>
+        </div>
+        <iframe allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-cat">Vídeo Diverso</div>
+        <div class="video-title">Vídeo 03</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="contact-section">
+  <div class="section-label">Contato</div>
+  <h2 class="section-title">Vamos trabalhar<br>juntos?</h2>
+  <div class="contact-inner">
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label">Localização</div>
+        <div class="contact-value">Minas Gerais, Brasil</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📱</div>
+      <div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-value"><a href="https://wa.me/5531852164670" target="_blank">(31) 8521-6470</a></div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <div class="contact-label">E-mail</div>
+        <div class="contact-value"><a href="mailto:thallesjulio2@gmail.com">thallesjulio2@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="cta-block">
+      <div class="cta-text">
+        <h3>Pronto para criar?</h3>
+        <p>Me manda uma mensagem e a gente começa.</p>
+      </div>
+      <a href="https://wa.me/5531852164670" target="_blank" class="btn-white">Chamar no WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Thalles<span>JB</span></div>
+  <p>Editor de Vídeo · Minas Gerais, Brasil</p>
+  <p>© 2026 Thalles JB</p>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+  // Gráfico
+  const ctx = document.getElementById('revenueChart').getContext('2d');
+  const gradient = ctx.createLinearGradient(0, 0, 0, 280);
+  gradient.addColorStop(0, 'rgba(255,77,28,0.25)');
+  gradient.addColorStop(1, 'rgba(255,77,28,0.0)');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Mês 1 (entrada)', 'Mês 2', 'Mês 3', 'Jan 2026'],
+      datasets: [{
+        label: 'Faturamento',
+        data: [100000, 195000, 395000, 450000],
+        borderColor: '#ff4d1c', borderWidth: 2.5,
+        pointBackgroundColor: '#ff4d1c', pointBorderColor: '#0a0a0a',
+        pointBorderWidth: 2, pointRadius: 6, pointHoverRadius: 8,
+        backgroundColor: gradient, fill: true, tension: 0.4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a1a', borderColor: 'rgba(255,77,28,0.3)', borderWidth: 1,
+          titleColor: '#f5f3ee', bodyColor: '#ff4d1c', padding: 12,
+          callbacks: { label: ctx => 'R$ ' + ctx.parsed.y.toLocaleString('pt-BR') }
+        }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: 'rgba(245,243,238,0.4)', font: { family: 'DM Sans', size: 12 } }, border: { color: 'rgba(255,255,255,0.06)' } },
+        y: { grid: { color: 'rgba(255,255,255,0.04)' }, border: { color: 'rgba(255,255,255,0.06)' }, ticks: { color: 'rgba(245,243,238,0.4)', font: { family: 'DM Sans', size: 12 }, callback: v => 'R$ ' + (v/1000).toFixed(0) + 'k' } }
+      }
+    }
+  });
+
+  // Skill bars
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-fill').forEach(el => el.classList.add('animated'));
+      }
+    });
+  }, { threshold: 0.3 });
+  const sobre = document.querySelector('.sobre-skills');
+  if (sobre) observer.observe(sobre);
+
+  // Portfolio tabs
+  function filterVideos(cat) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    document.querySelectorAll('.video-card').forEach(card => {
+      // stop playing iframes
+      const iframe = card.querySelector('iframe');
+      if (iframe) iframe.src = iframe.src;
+      card.querySelector('.video-thumb')?.classList.remove('playing');
+
+      if (card.dataset.cat === cat) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    // first card of category gets featured
+    const cards = document.querySelectorAll(`.video-card[data-cat="${cat}"]`);
+    document.querySelectorAll('.video-card').forEach(c => c.classList.remove('featured'));
+    if (cards.length > 0) cards[0].classList.add('featured');
+  }
+
+  // Play video
+  function playVideo(thumb, src) {
+    if (thumb.classList.contains('playing')) return;
+    const iframe = thumb.querySelector('iframe');
+    iframe.src = src;
+    thumb.classList.add('playing');
+  }
+</script>
+</body>
+</html>
