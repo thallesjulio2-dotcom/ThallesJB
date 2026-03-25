@@ -941,7 +941,7 @@ document.addEventListener('mouseleave', (e) => {
     document.getElementById('exit-overlay').classList.add('show');
   }
 });
-// Mobile: após 40s sem interação
+// Mobile: após 80s sem interação
 let idleTimer = setTimeout(() => {
   if (!exitShown) {
     exitShown = true;
