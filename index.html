@@ -31,10 +31,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 40px 60px;gap:60px;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 80% 50%,rgba(255,77,28,.1) 0%,transparent 60%)}
-.hero-timeline-bg{position:absolute;inset:0;pointer-events:none;opacity:0.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700' viewBox='0 0 1200 700'%3E%3Crect fill='%230a0a0a' width='1200' height='700'/%3E%3C!-- Track labels --%3E%3Crect fill='%23222' x='0' y='0' width='120' height='700'/%3E%3Crect fill='%23333' x='0' y='60' width='120' height='28' rx='2'/%3E%3Crect fill='%23333' x='0' y='108' width='120' height='28' rx='2'/%3E%3Crect fill='%23333' x='0' y='156' width='120' height='28' rx='2'/%3E%3Crect fill='%23333' x='0' y='204' width='120' height='28' rx='2'/%3E%3Crect fill='%23333' x='0' y='252' width='120' height='28' rx='2'/%3E%3Crect fill='%23333' x='0' y='300' width='120' height='28' rx='2'/%3E%3Ctext fill='%23888' font-family='monospace' font-size='10' x='8' y='79'%3EV1%3C/text%3E%3Ctext fill='%23888' font-family='monospace' font-size='10' x='8' y='127'%3EV2%3C/text%3E%3Ctext fill='%23888' font-family='monospace' font-size='10' x='8' y='175'%3EA1%3C/text%3E%3Ctext fill='%23888' font-family='monospace' font-size='10' x='8' y='223'%3EA2%3C/text%3E%3Ctext fill='%23888' font-family='monospace' font-size='10' x='8' y='271'%3EFXC%3C/text%3E%3Ctext fill='%23888' font-family='monospace' font-size='10' x='8' y='319'%3EGFX%3C/text%3E%3C!-- Timeline ruler --%3E%3Crect fill='%231a1a1a' x='120' y='0' width='1080' height='40'/%3E%3Cline stroke='%23444' stroke-width='1' x1='120' y1='40' x2='1200' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='220' y1='0' x2='220' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='320' y1='0' x2='320' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='420' y1='0' x2='420' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='520' y1='0' x2='520' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='620' y1='0' x2='620' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='720' y1='0' x2='720' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='820' y1='0' x2='820' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='920' y1='0' x2='920' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='1020' y1='0' x2='1020' y2='40'/%3E%3Cline stroke='%23555' stroke-width='1' x1='1120' y1='0' x2='1120' y2='40'/%3E%3Ctext fill='%23666' font-family='monospace' font-size='9' x='125' y='25'%3E00:00:00%3C/text%3E%3Ctext fill='%23666' font-family='monospace' font-size='9' x='225' y='25'%3E00:00:05%3C/text%3E%3Ctext fill='%23666' font-family='monospace' font-size='9' x='325' y='25'%3E00:00:10%3C/text%3E%3Ctext fill='%23666' font-family='monospace' font-size='9' x='425' y='25'%3E00:00:15%3C/text%3E%3Ctext fill='%23666' font-family='monospace' font-size='9' x='525' y='25'%3E00:00:20%3C/text%3E%3Ctext fill='%23666' font-family='monospace' font-size='9' x='625' y='25'%3E00:00:25%3C/text%3E%3Ctext fill='%23666' font-family='monospace' font-size='9' x='725' y='25'%3E00:00:30%3C/text%3E%3C!-- Video clips V1 --%3E%3Crect fill='%23264f78' x='140' y='48' width='185' height='32' rx='3'/%3E%3Crect fill='%23335a8a' x='145' y='48' width='4' height='32' rx='1'/%3E%3Ctext fill='%23a8c7eb' font-family='monospace' font-size='9' x='155' y='68'%3EClipe_abertura.mp4%3C/text%3E%3Crect fill='%231a3f5c' x='332' y='48' width='95' height='32' rx='3'/%3E%3Ctext fill='%23a8c7eb' font-family='monospace' font-size='9' x='340' y='68'%3EClipe_02.mp4%3C/text%3E%3Crect fill='%23264f78' x='434' y='48' width='220' height='32' rx='3'/%3E%3Crect fill='%23335a8a' x='439' y='48' width='4' height='32' rx='1'/%3E%3Ctext fill='%23a8c7eb' font-family='monospace' font-size='9' x='449' y='68'%3EClipe_principal.mp4%3C/text%3E%3Crect fill='%231a3f5c' x='661' y='48' width='130' height='32' rx='3'/%3E%3Ctext fill='%23a8c7eb' font-family='monospace' font-size='9' x='669' y='68'%3EClipe_04.mp4%3C/text%3E%3Crect fill='%23264f78' x='798' y='48' width='175' height='32' rx='3'/%3E%3Ctext fill='%23a8c7eb' font-family='monospace' font-size='9' x='806' y='68'%3EClipe_05.mp4%3C/text%3E%3C!-- Video clips V2 --%3E%3Crect fill='%23185c37' x='140' y='96' width='110' height='32' rx='3'/%3E%3Ctext fill='%2390d4a8' font-family='monospace' font-size='9' x='148' y='116'%3EB-Roll_01.mp4%3C/text%3E%3Crect fill='%231e7a47' x='258' y='96' width='80' height='32' rx='3'/%3E%3Ctext fill='%2390d4a8' font-family='monospace' font-size='9' x='266' y='116'%3EB-Roll_02%3C/text%3E%3Crect fill='%23185c37' x='434' y='96' width='155' height='32' rx='3'/%3E%3Ctext fill='%2390d4a8' font-family='monospace' font-size='9' x='442' y='116'%3EB-Roll_main.mp4%3C/text%3E%3Crect fill='%231e7a47' x='700' y='96' width='90' height='32' rx='3'/%3E%3Ctext fill='%2390d4a8' font-family='monospace' font-size='9' x='708' y='116'%3EB-Roll_04%3C/text%3E%3Crect fill='%23185c37' x='900' y='96' width='130' height='32' rx='3'/%3E%3Ctext fill='%2390d4a8' font-family='monospace' font-size='9' x='908' y='116'%3EB-Roll_05.mp4%3C/text%3E%3C!-- Audio A1 --%3E%3Crect fill='%234a2060' x='140' y='144' width='900' height='28' rx='3'/%3E%3Ctext fill='%23c9a0e0' font-family='monospace' font-size='9' x='148' y='162'%3EMúsica_principal.wav%3C/text%3E%3C!-- Audio waveform A1 --%3E%3Cpolyline fill='none' stroke='%23c9a0e0' stroke-width='1' opacity='0.5' points='140,158 160,148 180,162 200,145 220,160 240,150 260,163 280,147 300,158 320,149 340,162 360,148 380,155 400,145 420,160 440,150 460,165 480,148 500,156 520,147 540,162 560,148 580,155 600,149 620,163 640,148 660,157 680,147 700,162 720,149 740,158 760,148 780,163 800,150 820,158 840,148 860,162 880,150 900,158 920,148 940,162 960,150 980,158 1000,147 1020,162 1040,150'/%3E%3C!-- Audio A2 --%3E%3Crect fill='%234a4020' x='140' y='192' width='280' height='28' rx='3'/%3E%3Ctext fill='%23e0d090' font-family='monospace' font-size='9' x='148' y='210'%3EVoz_off_01.wav%3C/text%3E%3Crect fill='%234a4020' x='480' y='192' width='340' height='28' rx='3'/%3E%3Ctext fill='%23e0d090' font-family='monospace' font-size='9' x='488' y='210'%3EVoz_off_02.wav%3C/text%3E%3C!-- FX --%3E%3Crect fill='%23602020' x='140' y='240' width='45' height='22' rx='2'/%3E%3Ctext fill='%23ff9090' font-family='monospace' font-size='8' x='148' y='255'%3EZoom%3C/text%3E%3Crect fill='%23602020' x='260' y='240' width='40' height='22' rx='2'/%3E%3Ctext fill='%23ff9090' font-family='monospace' font-size='8' x='268' y='255'%3ECut%3C/text%3E%3Crect fill='%23602020' x='434' y='240' width='55' height='22' rx='2'/%3E%3Ctext fill='%23ff9090' font-family='monospace' font-size='8' x='442' y='255'%3EFlash%3C/text%3E%3Crect fill='%23602020' x='700' y='240' width='50' height='22' rx='2'/%3E%3Ctext fill='%23ff9090' font-family='monospace' font-size='8' x='708' y='255'%3EShake%3C/text%3E%3Crect fill='%23602020' x='900' y='240' width='60' height='22' rx='2'/%3E%3Ctext fill='%23ff9090' font-family='monospace' font-size='8' x='908' y='255'%3EGlitch%3C/text%3E%3C!-- GFX --%3E%3Crect fill='%23604020' x='200' y='290' width='70' height='22' rx='2'/%3E%3Ctext fill='%23ffc080' font-family='monospace' font-size='8' x='208' y='305'%3ELegenda%3C/text%3E%3Crect fill='%23604020' x='500' y='290' width='80' height='22' rx='2'/%3E%3Ctext fill='%23ffc080' font-family='monospace' font-size='8' x='508' y='305'%3ELOGO_animada%3C/text%3E%3Crect fill='%23604020' x='750' y='290' width='65' height='22' rx='2'/%3E%3Ctext fill='%23ffc080' font-family='monospace' font-size='8' x='758' y='305'%3ETransição%3C/text%3E%3C!-- Playhead --%3E%3Cline stroke='%23ff4d1c' stroke-width='2' x1='480' y1='0' x2='480' y2='700'/%3E%3Cpolygon fill='%23ff4d1c' points='475,0 485,0 480,12'/%3E%3C!-- Grid lines --%3E%3Cline stroke='%23ffffff' stroke-width='0.3' opacity='0.05' x1='120' y1='40' x2='1200' y2='40'/%3E%3Cline stroke='%23ffffff' stroke-width='0.3' opacity='0.05' x1='120' y1='88' x2='1200' y2='88'/%3E%3Cline stroke='%23ffffff' stroke-width='0.3' opacity='0.05' x1='120' y1='136' x2='1200' y2='136'/%3E%3Cline stroke='%23ffffff' stroke-width='0.3' opacity='0.05' x1='120' y1='184' x2='1200' y2='184'/%3E%3Cline stroke='%23ffffff' stroke-width='0.3' opacity='0.05' x1='120' y1='232' x2='1200' y2='232'/%3E%3Cline stroke='%23ffffff' stroke-width='0.3' opacity='0.05' x1='120' y1='280' x2='1200' y2='280'/%3E%3C/svg%3E");
-  background-size:cover;background-position:center top;background-repeat:no-repeat;
-  filter:contrast(1.2) brightness(1.3);
-}
+.hero-timeline-bg{position:absolute;inset:0;pointer-events:none;opacity:0;overflow:hidden}
+.hero-timeline-bg svg{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.09;object-fit:cover}
 .hero-content{position:relative;z-index:1}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,77,28,.4);border-radius:100px;padding:6px 16px;margin-bottom:24px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);width:fit-content}
 .hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s ease-in-out infinite}
@@ -344,7 +342,821 @@ footer p{font-size:13px;color:var(--muted)}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-timeline-bg"></div>
+  <div class="hero-timeline-bg"><svg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920 1080'>
+  <defs>
+    <linearGradient id='bgGrad' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#1a1a1f'/>
+      <stop offset='100%' stop-color='#0d0d12'/>
+    </linearGradient>
+    <linearGradient id='clipBlue' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#3b6fad'/>
+      <stop offset='100%' stop-color='#1e4478'/>
+    </linearGradient>
+    <linearGradient id='clipGreen' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#2e8b5a'/>
+      <stop offset='100%' stop-color='#1a5438'/>
+    </linearGradient>
+    <linearGradient id='clipPurple' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#6a3fa0'/>
+      <stop offset='100%' stop-color='#3d1f6a'/>
+    </linearGradient>
+    <linearGradient id='clipYellow' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#a07830'/>
+      <stop offset='100%' stop-color='#6a4e18'/>
+    </linearGradient>
+    <linearGradient id='clipRed' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#8a2525'/>
+      <stop offset='100%' stop-color='#5a1515'/>
+    </linearGradient>
+    <linearGradient id='monitorGrad' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#1c2a3a'/>
+      <stop offset='100%' stop-color='#0e1520'/>
+    </linearGradient>
+    <linearGradient id='scopeGrad' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#0a1a0a'/>
+      <stop offset='100%' stop-color='#050e05'/>
+    </linearGradient>
+    <linearGradient id='headerGrad' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#2a2a30'/>
+      <stop offset='100%' stop-color='#1e1e24'/>
+    </linearGradient>
+    <filter id='glow'>
+      <feGaussianBlur stdDeviation='3' result='blur'/>
+      <feMerge><feMergeNode in='blur'/><feMergeNode in='SourceGraphic'/></feMerge>
+    </filter>
+    <filter id='softglow'>
+      <feGaussianBlur stdDeviation='1.5' result='blur'/>
+      <feMerge><feMergeNode in='blur'/><feMergeNode in='SourceGraphic'/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background principal -->
+  <rect fill='url(#bgGrad)' width='1920' height='1080'/>
+
+  <!-- ===== BARRA DE MENU TOPO ===== -->
+  <rect fill='url(#headerGrad)' x='0' y='0' width='1920' height='28'/>
+  <rect fill='#222228' x='0' y='28' width='1920' height='2'/>
+  <!-- Logo Pr -->
+  <rect fill='#9b59d0' x='8' y='4' width='22' height='20' rx='3'/>
+  <text fill='white' font-family='Arial Black' font-size='11' font-weight='900' x='12' y='18'>Pr</text>
+  <!-- Menu items -->
+  <text fill='#cccccc' font-family='Arial' font-size='11' x='40' y='18'>File</text>
+  <text fill='#cccccc' font-family='Arial' font-size='11' x='72' y='18'>Edit</text>
+  <text fill='#cccccc' font-family='Arial' font-size='11' x='100' y='18'>Clip</text>
+  <text fill='#cccccc' font-family='Arial' font-size='11' x='128' y='18'>Sequence</text>
+  <text fill='#cccccc' font-family='Arial' font-size='11' x='195' y='18'>Markers</text>
+  <text fill='#cccccc' font-family='Arial' font-size='11' x='252' y='18'>Graphics</text>
+  <text fill='#cccccc' font-family='Arial' font-size='11' x='313' y='18'>View</text>
+  <text fill='#cccccc' font-family='Arial' font-size='11' x='344' y='18'>Window</text>
+  <text fill='#cccccc' font-family='Arial' font-size='11' x='403' y='18'>Help</text>
+  <!-- Workspace tabs -->
+  <text fill='#888' font-family='Arial' font-size='10' x='700' y='18'>Editing</text>
+  <text fill='#888' font-family='Arial' font-size='10' x='745' y='18'>Color</text>
+  <rect fill='#9b59d0' x='786' y='24' width='42' height='2' rx='1'/>
+  <text fill='#9b59d0' font-family='Arial' font-size='10' font-weight='bold' x='787' y='18'>Effects</text>
+  <text fill='#888' font-family='Arial' font-size='10' x='835' y='18'>Audio</text>
+  <text fill='#888' font-family='Arial' font-size='10' x='873' y='18'>Captions</text>
+
+  <!-- ===== PAINEL ESQUERDO - PROJECT ===== -->
+  <rect fill='#1a1a1f' x='0' y='30' width='330' height='520'/>
+  <rect fill='#222228' x='0' y='30' width='330' height='28'/>
+  <text fill='#cccccc' font-family='Arial' font-size='10' font-weight='bold' x='10' y='48'>Project: ThallesJB_Edit_v3</text>
+  <rect fill='#9b59d0' x='316' y='35' width='8' height='8' rx='1'/>
+  <!-- Tabs panel -->
+  <rect fill='#1e1e24' x='0' y='58' width='330' height='22'/>
+  <text fill='#9b59d0' font-family='Arial' font-size='10' font-weight='bold' x='10' y='72'>Media Browser</text>
+  <text fill='#777' font-family='Arial' font-size='10' x='108' y='72'>Libraries</text>
+  <text fill='#777' font-family='Arial' font-size='10' x='155' y='72'>Info</text>
+  <rect fill='#9b59d0' x='8' y='78' width='70' height='1' rx='0.5'/>
+  <!-- Toolbar busca -->
+  <rect fill='#2a2a32' x='4' y='82' width='200' height='18' rx='3'/>
+  <text fill='#555' font-family='Arial' font-size='9' x='10' y='94'>🔍 Search project...</text>
+  <!-- List header -->
+  <rect fill='#222228' x='0' y='102' width='330' height='18'/>
+  <text fill='#888' font-family='Arial' font-size='8' x='10' y='114'>Name</text>
+  <text fill='#888' font-family='Arial' font-size='8' x='200' y='114'>Duration</text>
+  <text fill='#888' font-family='Arial' font-size='8' x='268' y='114'>Rate</text>
+  <line stroke='#333' stroke-width='1' x1='0' y1='120' x2='330' y2='120'/>
+
+  <!-- Pasta Sequências -->
+  <rect fill='#26262e' x='0' y='120' width='330' height='22'/>
+  <text fill='#ffd700' font-family='Arial' font-size='9' x='8' y='135'>▶ 📁 SEQUÊNCIAS</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='268' y='135'>—</text>
+  <!-- Sub itens -->
+  <rect fill='#1e1e26' x='0' y='142' width='330' height='20'/>
+  <text fill='#aaaaff' font-family='Arial' font-size='9' x='22' y='155'>  🎬 Sequência_Final_v3</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='155'>02:34:18</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='270' y='155'>30fps</text>
+  <rect fill='#2a2a34' x='0' y='162' width='330' height='20'/>
+  <text fill='#9090ee' font-family='Arial' font-size='9' x='22' y='175'>  🎬 Reels_Pack_07</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='175'>00:45:22</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='270' y='175'>60fps</text>
+  <!-- Pasta Footage -->
+  <rect fill='#26262e' x='0' y='182' width='330' height='22'/>
+  <text fill='#ffd700' font-family='Arial' font-size='9' x='8' y='197'>▼ 📁 FOOTAGE</text>
+  <!-- Clips com thumbnail fake -->
+  <rect fill='#1e1e26' x='0' y='204' width='330' height='22'/>
+  <rect fill='#264f78' x='22' y='207' width='28' height='16' rx='1'/>
+  <text fill='#aaccee' font-family='Arial' font-size='9' x='54' y='219'>  Abertura_4K.mp4</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='219'>00:00:28</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='270' y='219'>4K</text>
+  <rect fill='#1a1a22' x='0' y='226' width='330' height='22'/>
+  <rect fill='#185c37' x='22' y='229' width='28' height='16' rx='1'/>
+  <text fill='#90d4a8' font-family='Arial' font-size='9' x='54' y='241'>  B-Roll_Ruas.mp4</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='241'>00:01:12</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='270' y='241'>1080p</text>
+  <rect fill='#1e1e26' x='0' y='248' width='330' height='22'/>
+  <rect fill='#4a2060' x='22' y='251' width='28' height='16' rx='1'/>
+  <text fill='#c9a0e0' font-family='Arial' font-size='9' x='54' y='263'>  Entrevista_cam1.mp4</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='263'>00:08:45</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='270' y='263'>4K</text>
+  <rect fill='#1a1a22' x='0' y='270' width='330' height='22'/>
+  <rect fill='#5a3010' x='22' y='273' width='28' height='16' rx='1'/>
+  <text fill='#ffb060' font-family='Arial' font-size='9' x='54' y='285'>  DroneFlight_sunset.mp4</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='285'>00:02:33</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='270' y='285'>6K</text>
+  <rect fill='#1e1e26' x='0' y='292' width='330' height='22'/>
+  <rect fill='#264f78' x='22' y='295' width='28' height='16' rx='1'/>
+  <text fill='#aaccee' font-family='Arial' font-size='9' x='54' y='307'>  Talking_head_A.mp4</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='307'>00:05:20</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='270' y='307'>4K</text>
+  <!-- Pasta Audio -->
+  <rect fill='#26262e' x='0' y='314' width='330' height='22'/>
+  <text fill='#ffd700' font-family='Arial' font-size='9' x='8' y='329'>▼ 📁 ÁUDIO</text>
+  <rect fill='#1e1e26' x='0' y='336' width='330' height='20'/>
+  <text fill='#9090ee' font-family='Arial' font-size='9' x='22' y='350'>  🎵 Trilha_principal.wav</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='350'>03:24:00</text>
+  <rect fill='#1a1a22' x='0' y='356' width='330' height='20'/>
+  <text fill='#9090ee' font-family='Arial' font-size='9' x='22' y='370'>  🎵 SFX_whoosh_01.wav</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='370'>00:00:02</text>
+  <rect fill='#1e1e26' x='0' y='376' width='330' height='20'/>
+  <text fill='#9090ee' font-family='Arial' font-size='9' x='22' y='390'>  🎵 VozOff_final.wav</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='200' y='390'>00:02:18</text>
+  <!-- Pasta Graphics -->
+  <rect fill='#26262e' x='0' y='396' width='330' height='22'/>
+  <text fill='#ffd700' font-family='Arial' font-size='9' x='8' y='411'>▶ 📁 MOTION GRAPHICS</text>
+  <rect fill='#1e1e26' x='0' y='418' width='330' height='20'/>
+  <text fill='#ffbb44' font-family='Arial' font-size='9' x='22' y='432'>  ✨ LowerThird_Animado.mogrt</text>
+  <rect fill='#1a1a22' x='0' y='438' width='330' height='20'/>
+  <text fill='#ffbb44' font-family='Arial' font-size='9' x='22' y='452'>  ✨ Intro_Logo.mogrt</text>
+  <!-- Barra inferior projeto -->
+  <rect fill='#222228' x='0' y='538' width='330' height='12'/>
+  <text fill='#555' font-family='Arial' font-size='7' x='8' y='548'>23 itens · 4K Sequence</text>
+
+  <!-- ===== PAINEL EFFECTS ===== -->
+  <rect fill='#1a1a1f' x='0' y='550' width='330' height='530'/>
+  <rect fill='#222228' x='0' y='550' width='330' height='28'/>
+  <text fill='#cccccc' font-family='Arial' font-size='10' font-weight='bold' x='10' y='568'>Effects</text>
+  <text fill='#666' font-family='Arial' font-size='10' x='65' y='568'>Effect Controls</text>
+  <text fill='#666' font-family='Arial' font-size='10' x='170' y='568'>Audio Clip</text>
+  <rect fill='#9b59d0' x='8' y='576' width='42' height='1'/>
+  <!-- Busca effects -->
+  <rect fill='#2a2a32' x='4' y='580' width='200' height='18' rx='3'/>
+  <text fill='#555' font-family='Arial' font-size='9' x='10' y='592'>🔍 Search effects...</text>
+  <!-- Categorias -->
+  <rect fill='#26262e' x='0' y='600' width='330' height='20'/>
+  <text fill='#ffd700' font-family='Arial' font-size='9' x='8' y='614'>▼ 🎨 Lumetri Presets</text>
+  <rect fill='#1e1e26' x='0' y='620' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='632'>  Filmic Look</text>
+  <rect fill='#1a1a22' x='0' y='638' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='650'>  Cinematic Orange/Teal</text>
+  <rect fill='#1e1e26' x='0' y='656' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='668'>  Vintage 35mm</text>
+  <rect fill='#26262e' x='0' y='676' width='330' height='20'/>
+  <text fill='#ffd700' font-family='Arial' font-size='9' x='8' y='690'>▼ 🎬 Video Effects</text>
+  <rect fill='#1e1e26' x='0' y='696' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='708'>  Blur &amp; Sharpen</text>
+  <rect fill='#1a1a22' x='0' y='714' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='726'>  Color Correction</text>
+  <rect fill='#1e1e26' x='0' y='732' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='744'>  Distort</text>
+  <rect fill='#1a1a22' x='0' y='750' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='762'>  Generate</text>
+  <rect fill='#26262e' x='0' y='770' width='330' height='20'/>
+  <text fill='#ffd700' font-family='Arial' font-size='9' x='8' y='784'>▼ 🔀 Video Transitions</text>
+  <rect fill='#1e1e26' x='0' y='790' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='802'>  Cross Dissolve</text>
+  <rect fill='#1a1a22' x='0' y='808' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='820'>  Film Dissolve</text>
+  <rect fill='#1e1e26' x='0' y='826' width='330' height='18'/>
+  <text fill='#aaa' font-family='Arial' font-size='9' x='22' y='838'>  Dip to Black</text>
+
+  <!-- ===== DIVISOR VERTICAL ESQUERDO ===== -->
+  <rect fill='#111115' x='330' y='30' width='3' height='1050'/>
+
+  <!-- ===== PAINEL CENTRAL SUPERIOR - SOURCE + PROGRAM ===== -->
+  <!-- Source Monitor -->
+  <rect fill='#141418' x='333' y='30' width='620' height='520'/>
+  <rect fill='#1e1e24' x='333' y='30' width='620' height='28'/>
+  <text fill='#888' font-family='Arial' font-size='10' x='345' y='48'>Source: Abertura_4K.mp4</text>
+  <text fill='#555' font-family='Arial' font-size='10' x='760' y='48'>Program: Sequência_Final_v3</text>
+  <rect fill='#9b59d0' x='335' y='56' width='82' height='1.5'/>
+  <!-- Conteúdo monitor source -->
+  <rect fill='#0d0d15' x='333' y='58' width='300' height='390'/>
+  <!-- Imagem fake no source -->
+  <rect fill='#1c2a3a' x='340' y='65' width='286' height='185'/>
+  <!-- Grade de perspectiva fake -->
+  <line stroke='#2a3a50' stroke-width='1' x1='340' y1='110' x2='626' y2='110'/>
+  <line stroke='#2a3a50' stroke-width='1' x1='340' y1='155' x2='626' y2='155'/>
+  <line stroke='#2a3a50' stroke-width='1' x1='380' y1='65' x2='380' y2='250'/>
+  <line stroke='#2a3a50' stroke-width='1' x1='450' y1='65' x2='450' y2='250'/>
+  <line stroke='#2a3a50' stroke-width='1' x1='520' y1='65' x2='520' y2='250'/>
+  <line stroke='#2a3a50' stroke-width='1' x1='590' y1='65' x2='590' y2='250'/>
+  <!-- Silhueta fake cidade -->
+  <rect fill='#253545' x='340' y='160' width='286' height='90'/>
+  <rect fill='#1a2535' x='345' y='135' width='25' height='115'/>
+  <rect fill='#1a2535' x='375' y='148' width='18' height='102'/>
+  <rect fill='#1a2535' x='400' y='120' width='30' height='130'/>
+  <rect fill='#1a2535' x='435' y='140' width='20' height='110'/>
+  <rect fill='#1a2535' x='460' y='130' width='35' height='120'/>
+  <rect fill='#1a2535' x='500' y='155' width='22' height='95'/>
+  <rect fill='#1a2535' x='528' y='125' width='28' height='125'/>
+  <rect fill='#1a2535' x='562' y='145' width='18' height='105'/>
+  <rect fill='#1a2535' x='585' y='135' width='25' height='115'/>
+  <!-- Janelas nos prédios (pontos laranja) -->
+  <rect fill='#ff8c2a' opacity='0.6' x='350' y='145' width='2' height='2'/>
+  <rect fill='#ff8c2a' opacity='0.6' x='355' y='140' width='2' height='2'/>
+  <rect fill='#ffe080' opacity='0.5' x='408' y='130' width='3' height='2'/>
+  <rect fill='#ffe080' opacity='0.5' x='415' y='138' width='3' height='2'/>
+  <rect fill='#ff8c2a' opacity='0.6' x='468' y='140' width='2' height='2'/>
+  <rect fill='#ffe080' opacity='0.5' x='535' y='134' width='3' height='2'/>
+  <!-- Timecode source -->
+  <text fill='#00d4ff' font-family='monospace' font-size='10' font-weight='bold' x='342' y='264'>00:00:12:08</text>
+  <!-- Scopes abaixo source -->
+  <rect fill='url(#scopeGrad)' x='333' y='270' width='148' height='110'/>
+  <text fill='#555' font-family='Arial' font-size='7' x='340' y='281'>Waveform (RGB)</text>
+  <!-- Waveform colorido -->
+  <polyline fill='none' stroke='#ff4040' stroke-width='1' opacity='0.8' 
+    points='335,370 345,340 355,358 365,332 375,355 385,342 395,360 405,335 415,352 425,344 435,362 445,338 455,356 465,340 475,368 480,335'/>
+  <polyline fill='none' stroke='#40ff40' stroke-width='1' opacity='0.8' 
+    points='335,368 345,348 355,362 365,342 375,358 385,346 395,364 405,340 415,355 425,348 435,365 445,342 455,360 465,344 475,370 480,340'/>
+  <polyline fill='none' stroke='#4080ff' stroke-width='1' opacity='0.8' 
+    points='335,372 345,345 355,365 365,338 375,362 385,350 395,368 405,338 415,358 425,352 435,368 445,345 455,363 465,347 475,374 480,342'/>
+  <!-- Vectorscope -->
+  <rect fill='url(#scopeGrad)' x='483' y='270' width='148' height='110'/>
+  <text fill='#555' font-family='Arial' font-size='7' x='490' y='281'>Vectorscope</text>
+  <circle fill='none' stroke='#333' stroke-width='1' cx='557' cy='325' r='40'/>
+  <circle fill='none' stroke='#333' stroke-width='0.5' cx='557' cy='325' r='25'/>
+  <circle fill='none' stroke='#333' stroke-width='0.5' cx='557' cy='325' r='12'/>
+  <!-- Pontos coloridos do vectorscope -->
+  <circle fill='#ff4040' opacity='0.7' cx='572' cy='310' r='4'/>
+  <circle fill='#40ff80' opacity='0.7' cx='548' cy='308' r='3'/>
+  <circle fill='#4080ff' opacity='0.7' cx='540' cy='330' r='3'/>
+  <circle fill='#ffff40' opacity='0.6' cx='565' cy='320' r='2'/>
+  <circle fill='#ff80ff' opacity='0.6' cx='558' cy='335' r='2'/>
+  <!-- Controles playback source -->
+  <rect fill='#1e1e24' x='333' y='382' width='300' height='36'/>
+  <text fill='#aaa' font-family='Arial' font-size='14' x='405' y='405'>⏮</text>
+  <text fill='#aaa' font-family='Arial' font-size='14' x='430' y='405'>◀</text>
+  <text fill='white' font-family='Arial' font-size='18' x='453' y='407'>▶</text>
+  <text fill='#aaa' font-family='Arial' font-size='14' x='478' y='405'>▶</text>
+  <text fill='#aaa' font-family='Arial' font-size='14' x='503' y='405'>⏭</text>
+  <!-- Timeline barra source -->
+  <rect fill='#2a2a32' x='335' y='420' width='296' height='6' rx='3'/>
+  <rect fill='#9b59d0' x='335' y='420' width='120' height='6' rx='3'/>
+  <circle fill='white' cx='455' cy='423' r='5'/>
+
+  <!-- ===== PROGRAM MONITOR (direita) ===== -->
+  <rect fill='#141418' x='633' y='58' width='318' height='492'/>
+  <!-- Imagem program monitor -->
+  <rect fill='url(#monitorGrad)' x='636' y='62' width='312' height='200'/>
+  <!-- Conteúdo rico no monitor -->
+  <rect fill='#0e1a28' x='636' y='62' width='312' height='200'/>
+  <!-- Céu gradiente -->
+  <rect fill='#1a3050' x='636' y='62' width='312' height='80'/>
+  <rect fill='#2a4870' x='636' y='102' width='312' height='40'/>
+  <!-- Sol -->
+  <circle fill='#ffcc44' opacity='0.8' cx='820' cy='90' r='18' filter='url(#glow)'/>
+  <circle fill='#ffee88' opacity='0.5' cx='820' cy='90' r='28'/>
+  <!-- Horizon line -->
+  <rect fill='#1a2838' x='636' y='142' width='312' height='120'/>
+  <!-- Paisagem verde -->
+  <ellipse fill='#1e4020' cx='680' cy='180' rx='60' ry='40'/>
+  <ellipse fill='#254825' cx='740' cy='195' rx='50' ry='30'/>
+  <ellipse fill='#1e4020' cx='800' cy='175' rx='65' ry='45'/>
+  <ellipse fill='#2a5828' cx='870' cy='190' rx='55' ry='35'/>
+  <ellipse fill='#1e4020' cx='930' cy='180' rx='45' ry='38'/>
+  <!-- Estrada perspectiva -->
+  <polygon fill='#2a3a2a' points='724,262 764,262 748,178 736,178'/>
+  <line stroke='#ffffff' stroke-width='0.8' opacity='0.3' x1='742' y1='180' x2='742' y2='262'/>
+  <!-- Reflection/bokeh balls -->
+  <circle fill='#ff8c2a' opacity='0.15' cx='660' cy='90' r='15'/>
+  <circle fill='#ff4d1c' opacity='0.12' cx='700' cy='80' r='10'/>
+  <circle fill='#ffcc44' opacity='0.1' cx='890' cy='95' r='20'/>
+  <circle fill='#ff8c2a' opacity='0.08' cx='930' cy='85' r='12'/>
+  <!-- Safe frame overlay -->
+  <rect fill='none' stroke='#ffffff' stroke-width='0.5' opacity='0.15' x='653' y='68' width='278' height='188'/>
+  <rect fill='none' stroke='#ffffff' stroke-width='0.5' opacity='0.08' x='670' y='75' width='244' height='174'/>
+  <!-- Timecode program -->
+  <text fill='#00d4ff' font-family='monospace' font-size='10' font-weight='bold' x='642' y='275'>00:01:24:15</text>
+  <text fill='#888' font-family='monospace' font-size='9' x='800' y='275'>30.00fps · 3840x2160</text>
+  <!-- Lower third legenda fake -->
+  <rect fill='#9b59d0' opacity='0.85' x='643' y='228' width='180' height='24' rx='2'/>
+  <text fill='white' font-family='Arial' font-size='9' font-weight='bold' x='649' y='238'>THALLES JB</text>
+  <text fill='#ddd' font-family='Arial' font-size='7' x='649' y='248'>Editor de Vídeo Criativo</text>
+  <!-- Audio meters direita -->
+  <rect fill='#1a1a22' x='938' y='62' width='12' height='200'/>
+  <rect fill='#28c840' x='940' y='200' width='4' height='62'/>
+  <rect fill='#a0d420' x='940' y='178' width='4' height='22'/>
+  <rect fill='#f0a010' x='940' y='162' width='4' height='16'/>
+  <rect fill='#f04020' x='940' y='150' width='4' height='12'/>
+  <rect fill='#28c840' x='946' y='205' width='4' height='57'/>
+  <rect fill='#a0d420' x='946' y='188' width='4' height='17'/>
+  <rect fill='#f0a010' x='946' y='172' width='4' height='16'/>
+  <!-- Peak markers -->
+  <rect fill='white' x='940' y='157' width='4' height='1'/>
+  <rect fill='white' x='946' y='172' width='4' height='1'/>
+  <!-- Controles playback program -->
+  <rect fill='#1e1e24' x='633' y='280' width='318' height='40'/>
+  <text fill='#aaa' font-family='Arial' font-size='12' x='682' y='303'>⏮</text>
+  <text fill='#aaa' font-family='Arial' font-size='12' x='706' y='303'>◀</text>
+  <text fill='white' font-family='Arial' font-size='16' x='728' y='305'>▶</text>
+  <text fill='#aaa' font-family='Arial' font-size='12' x='752' y='303'>▶▶</text>
+  <text fill='#aaa' font-family='Arial' font-size='12' x='780' y='303'>⏭</text>
+  <text fill='#9b59d0' font-family='Arial' font-size='11' x='815' y='303'>●</text>
+  <!-- Barra prog program -->
+  <rect fill='#2a2a32' x='635' y='322' width='314' height='6' rx='3'/>
+  <rect fill='#9b59d0' x='635' y='322' width='180' height='6' rx='3'/>
+  <circle fill='white' cx='815' cy='325' r='5'/>
+  <!-- Lumetri Color preview miniatura -->
+  <rect fill='#1a1a22' x='633' y='332' width='318' height='218'/>
+  <text fill='#777' font-family='Arial' font-size='9' font-weight='bold' x='642' y='348'>Lumetri Color</text>
+  <rect fill='#9b59d0' x='635' y='350' width='40' height='1'/>
+  <!-- Sliders de cor -->
+  <text fill='#666' font-family='Arial' font-size='8' x='640' y='368'>Exposure</text>
+  <rect fill='#2a2a32' x='695' y='360' width='240' height='8' rx='4'/>
+  <rect fill='#9b59d0' x='695' y='360' width='140' height='8' rx='4'/>
+  <circle fill='white' cx='835' cy='364' r='5'/>
+  <text fill='#ff8c2a' font-family='monospace' font-size='8' x='897' y='368'>+0.35</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='640' y='390'>Contrast</text>
+  <rect fill='#2a2a32' x='695' y='382' width='240' height='8' rx='4'/>
+  <rect fill='#264f78' x='695' y='382' width='170' height='8' rx='4'/>
+  <circle fill='white' cx='865' cy='386' r='5'/>
+  <text fill='#aaccee' font-family='monospace' font-size='8' x='897' y='390'>+18</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='640' y='412'>Highlights</text>
+  <rect fill='#2a2a32' x='695' y='404' width='240' height='8' rx='4'/>
+  <rect fill='#264f78' x='695' y='404' width='90' height='8' rx='4'/>
+  <circle fill='white' cx='785' cy='408' r='5'/>
+  <text fill='#aaccee' font-family='monospace' font-size='8' x='897' y='412'>-22</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='640' y='434'>Shadows</text>
+  <rect fill='#2a2a32' x='695' y='426' width='240' height='8' rx='4'/>
+  <rect fill='#264f78' x='695' y='426' width='200' height='8' rx='4'/>
+  <circle fill='white' cx='895' cy='430' r='5'/>
+  <text fill='#ff8c2a' font-family='monospace' font-size='8' x='897' y='434'>+35</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='640' y='456'>Saturation</text>
+  <rect fill='#2a2a32' x='695' y='448' width='240' height='8' rx='4'/>
+  <rect fill='#185c37' x='695' y='448' width='160' height='8' rx='4'/>
+  <circle fill='white' cx='855' cy='452' r='5'/>
+  <text fill='#90d4a8' font-family='monospace' font-size='8' x='897' y='456'>115</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='640' y='478'>Temperature</text>
+  <rect fill='#2a2a32' x='695' y='470' width='240' height='8' rx='4'/>
+  <rect fill='#602020' x='695' y='470' width='115' height='8' rx='4'/>
+  <rect fill='#204060' x='810' y='470' width='125' height='8' rx='4'/>
+  <circle fill='white' cx='810' cy='474' r='5'/>
+  <text fill='#aaccee' font-family='monospace' font-size='8' x='897' y='478'>5600K</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='640' y='500'>Tint</text>
+  <rect fill='#2a2a32' x='695' y='492' width='240' height='8' rx='4'/>
+  <rect fill='#185c37' x='695' y='492' width='130' height='8' rx='4'/>
+  <circle fill='white' cx='825' cy='496' r='5'/>
+  <text fill='#90d4a8' font-family='monospace' font-size='8' x='897' y='500'>+8</text>
+
+  <!-- ===== DIVISOR VERTICAL DIREITO ===== -->
+  <rect fill='#111115' x='953' y='30' width='3' height='1050'/>
+
+  <!-- ===== PAINEL DIREITO - EFFECTS CONTROLS + AUDIO ===== -->
+  <rect fill='#1a1a1f' x='956' y='30' width='380' height='520'/>
+  <rect fill='#222228' x='956' y='30' width='380' height='28'/>
+  <text fill='#9b59d0' font-family='Arial' font-size='10' font-weight='bold' x='968' y='48'>Effect Controls</text>
+  <text fill='#666' font-family='Arial' font-size='10' x='1070' y='48'>Audio Track Mixer</text>
+  <text fill='#666' font-family='Arial' font-size='10' x='1190' y='48'>Metadata</text>
+  <rect fill='#9b59d0' x='966' y='56' width='78' height='1'/>
+  <!-- Clip selecionado -->
+  <rect fill='#1e1e24' x='956' y='58' width='380' height='20'/>
+  <text fill='#cccccc' font-family='Arial' font-size='9' x='968' y='72'>Abertura_4K.mp4 · 00:00:12:08 → 00:00:28:00</text>
+  <!-- Motion controls -->
+  <rect fill='#222228' x='956' y='78' width='380' height='24'/>
+  <text fill='#aaa' font-family='Arial' font-size='10' font-weight='bold' x='968' y='94'>▼  Motion</text>
+  <text fill='#9b59d0' font-family='Arial' font-size='9' x='1270' y='94'>fx</text>
+  <!-- Position -->
+  <rect fill='#1e1e26' x='956' y='102' width='380' height='22'/>
+  <text fill='#888' font-family='Arial' font-size='9' x='985' y='117'>Position</text>
+  <rect fill='#2a2a35' x='1060' y='104' width='70' height='14' rx='2'/>
+  <text fill='#00d4ff' font-family='monospace' font-size='9' x='1065' y='115'>960.0</text>
+  <rect fill='#2a2a35' x='1136' y='104' width='70' height='14' rx='2'/>
+  <text fill='#00d4ff' font-family='monospace' font-size='9' x='1141' y='115'>540.0</text>
+  <circle fill='#9b59d0' cx='974' cy='113' r='3'/>
+  <!-- Scale -->
+  <rect fill='#1a1a22' x='956' y='124' width='380' height='22'/>
+  <text fill='#888' font-family='Arial' font-size='9' x='985' y='139'>Scale</text>
+  <rect fill='#2a2a35' x='1060' y='126' width='70' height='14' rx='2'/>
+  <text fill='#ff8c2a' font-family='monospace' font-size='9' x='1065' y='137'>105.0</text>
+  <rect fill='#2a2a32' x='1145' y='129' width='160' height='6' rx='3'/>
+  <rect fill='#ff8c2a' x='1145' y='129' width='95' height='6' rx='3'/>
+  <circle fill='white' cx='1240' cy='132' r='4'/>
+  <!-- Rotation -->
+  <rect fill='#1e1e26' x='956' y='146' width='380' height='22'/>
+  <text fill='#888' font-family='Arial' font-size='9' x='985' y='161'>Rotation</text>
+  <rect fill='#2a2a35' x='1060' y='148' width='70' height='14' rx='2'/>
+  <text fill='#00d4ff' font-family='monospace' font-size='9' x='1065' y='159'>0.0°</text>
+  <!-- Opacity -->
+  <rect fill='#222228' x='956' y='168' width='380' height='24'/>
+  <text fill='#aaa' font-family='Arial' font-size='10' font-weight='bold' x='968' y='184'>▼  Opacity</text>
+  <rect fill='#1e1e26' x='956' y='192' width='380' height='22'/>
+  <text fill='#888' font-family='Arial' font-size='9' x='985' y='207'>Opacity</text>
+  <rect fill='#2a2a35' x='1060' y='194' width='60' height='14' rx='2'/>
+  <text fill='#90d4a8' font-family='monospace' font-size='9' x='1065' y='205'>100.0%</text>
+  <!-- Lumetri Color -->
+  <rect fill='#222228' x='956' y='214' width='380' height='24'/>
+  <text fill='#aaa' font-family='Arial' font-size='10' font-weight='bold' x='968' y='230'>▼  Lumetri Color</text>
+  <text fill='#9b59d0' font-family='Arial' font-size='9' x='1270' y='230'>fx  ✓</text>
+  <!-- Curvas de cor simuladas -->
+  <rect fill='#0d0d15' x='960' y='238' width='180' height='140'/>
+  <text fill='#555' font-family='Arial' font-size='7' x='965' y='250'>RGB Curves</text>
+  <!-- Grade das curvas -->
+  <line stroke='#222' stroke-width='0.5' x1='960' y1='268' x2='1140' y2='268'/>
+  <line stroke='#222' stroke-width='0.5' x1='960' y1='298' x2='1140' y2='298'/>
+  <line stroke='#222' stroke-width='0.5' x1='960' y1='328' x2='1140' y2='328'/>
+  <line stroke='#222' stroke-width='0.5' x1='1005' y1='252' x2='1005' y2='378'/>
+  <line stroke='#222' stroke-width='0.5' x1='1050' y1='252' x2='1050' y2='378'/>
+  <line stroke='#222' stroke-width='0.5' x1='1095' y1='252' x2='1095' y2='378'/>
+  <!-- Diagonal base -->
+  <line stroke='#333' stroke-width='0.8' x1='962' y1='376' x2='1138' y2='252'/>
+  <!-- Curva RGB ajustada -->
+  <path d='M962,376 Q1000,340 1050,290 Q1080,255 1138,252' fill='none' stroke='white' stroke-width='1.5' opacity='0.7'/>
+  <!-- Curva Vermelha -->
+  <path d='M962,376 Q1010,345 1055,295 Q1085,260 1138,248' fill='none' stroke='#ff4040' stroke-width='1.2' opacity='0.6'/>
+  <!-- Curva Verde -->
+  <path d='M962,378 Q1005,342 1052,292 Q1085,256 1138,250' fill='none' stroke='#40ff80' stroke-width='1.2' opacity='0.5'/>
+  <!-- Curva Azul -->
+  <path d='M962,374 Q1008,338 1048,288 Q1082,252 1138,244' fill='none' stroke='#4080ff' stroke-width='1.2' opacity='0.5'/>
+  <!-- Pontos de controle -->
+  <circle fill='white' cx='1050' cy='290' r='3' opacity='0.8'/>
+  <circle fill='white' cx='1095' cy='258' r='3' opacity='0.8'/>
+  <!-- Hue/Saturation wheel mini -->
+  <rect fill='#0d0d15' x='1148' y='238' width='180' height='140'/>
+  <text fill='#555' font-family='Arial' font-size='7' x='1155' y='250'>Hue/Saturation</text>
+  <circle fill='none' stroke='#ff4040' stroke-width='12' cx='1238' cy='315' r='40' opacity='0.3'/>
+  <circle fill='none' stroke='#40ff80' stroke-width='12' cx='1238' cy='315' r='40' 
+    stroke-dasharray='50,76' stroke-dashoffset='63' opacity='0.3'/>
+  <circle fill='none' stroke='#4080ff' stroke-width='12' cx='1238' cy='315' r='40'
+    stroke-dasharray='50,76' stroke-dashoffset='-13' opacity='0.3'/>
+  <circle fill='none' stroke='#ffff40' stroke-width='12' cx='1238' cy='315' r='40'
+    stroke-dasharray='25,101' stroke-dashoffset='50' opacity='0.25'/>
+  <circle fill='#9b59d0' opacity='0.7' cx='1238' cy='315' r='8'/>
+  <!-- Warp Stabilizer -->
+  <rect fill='#222228' x='956' y='378' width='380' height='24'/>
+  <text fill='#aaa' font-family='Arial' font-size='10' font-weight='bold' x='968' y='394'>▶  Warp Stabilizer</text>
+  <rect fill='#28c840' x='1300' y='382' width='28' height='14' rx='7'/>
+  <circle fill='white' cx='1320' cy='389' r='5'/>
+  <!-- Unsharp Mask -->
+  <rect fill='#1e1e26' x='956' y='402' width='380' height='24'/>
+  <text fill='#aaa' font-family='Arial' font-size='10' font-weight='bold' x='968' y='418'>▶  Unsharp Mask</text>
+  <!-- Audio Mixer mini preview -->
+  <rect fill='#222228' x='956' y='428' width='380' height='24'/>
+  <text fill='#aaa' font-family='Arial' font-size='10' font-weight='bold' x='968' y='444'>▼  Audio Effects</text>
+  <rect fill='#1e1e26' x='956' y='452' width='380' height='96'/>
+  <!-- Faders de audio -->
+  <rect fill='#111115' x='970' y='460' width='24' height='78' rx='3'/>
+  <rect fill='#28c840' x='972' y='510' width='20' height='25' rx='2'/>
+  <rect fill='#a0d420' x='972' y='494' width='20' height='16' rx='2'/>
+  <rect fill='#f0a010' x='972' y='482' width='20' height='12' rx='2'/>
+  <rect fill='#111115' x='1010' y='460' width='24' height='78' rx='3'/>
+  <rect fill='#28c840' x='1012' y='505' width='20' height='30' rx='2'/>
+  <rect fill='#a0d420' x='1012' y='492' width='20' height='13' rx='2'/>
+  <rect fill='#111115' x='1050' y='460' width='24' height='78' rx='3'/>
+  <rect fill='#28c840' x='1052' y='515' width='20' height='20' rx='2'/>
+  <rect fill='#a0d420' x='1052' y='506' width='20' height='9' rx='2'/>
+  <rect fill='#111115' x='1090' y='460' width='24' height='78' rx='3'/>
+  <rect fill='#28c840' x='1092' y='500' width='20' height='35' rx='2'/>
+  <rect fill='#a0d420' x='1092' y='488' width='20' height='12' rx='2'/>
+  <rect fill='#f0a010' x='1092' y='478' width='20' height='10' rx='2'/>
+  <text fill='#555' font-family='Arial' font-size='7' x='973' y='547'>A1</text>
+  <text fill='#555' font-family='Arial' font-size='7' x='1013' y='547'>A2</text>
+  <text fill='#555' font-family='Arial' font-size='7' x='1053' y='547'>A3</text>
+  <text fill='#555' font-family='Arial' font-size='7' x='1090' y='547'>MX</text>
+  <!-- EQ visualizer -->
+  <rect fill='#0d0d15' x='1140' y='455' width='190' height='88'/>
+  <text fill='#555' font-family='Arial' font-size='7' x='1148' y='466'>Parametric EQ</text>
+  <!-- Curva EQ -->
+  <polyline fill='none' stroke='#9b59d0' stroke-width='1.5' opacity='0.8'
+    points='1142,510 1155,508 1168,500 1180,490 1192,496 1205,504 1218,498 1232,488 1245,492 1258,500 1270,496 1282,488 1295,494 1310,506 1325,510'/>
+  <line stroke='#333' stroke-width='0.5' x1='1140' y1='498' x2='1330' y2='498'/>
+  <!-- Pontos EQ control -->
+  <circle fill='#9b59d0' cx='1180' cy='490' r='4'/>
+  <circle fill='#9b59d0' cx='1232' cy='488' r='4'/>
+  <circle fill='#9b59d0' cx='1282' cy='488' r='4'/>
+
+  <!-- ===== BARRA HORIZONTAL DIVISÓRIA ===== -->
+  <rect fill='#111115' x='0' y='550' width='1920' height='3'/>
+
+  <!-- ===== TIMELINE ABAIXO ===== -->
+  <rect fill='#141418' x='0' y='553' width='1920' height='527'/>
+
+  <!-- Toolbar da timeline -->
+  <rect fill='#1e1e24' x='0' y='553' width='1920' height='32'/>
+  <!-- Ferramentas -->
+  <rect fill='#9b59d0' x='4' y='556' width='24' height='24' rx='3'/>
+  <text fill='white' font-family='Arial' font-size='11' x='9' y='572'>V</text>
+  <rect fill='#2a2a32' x='30' y='556' width='24' height='24' rx='3'/>
+  <text fill='#aaa' font-family='Arial' font-size='11' x='35' y='572'>C</text>
+  <rect fill='#2a2a32' x='56' y='556' width='24' height='24' rx='3'/>
+  <text fill='#aaa' font-family='Arial' font-size='12' x='61' y='572'>✂</text>
+  <rect fill='#2a2a32' x='82' y='556' width='24' height='24' rx='3'/>
+  <text fill='#aaa' font-family='Arial' font-size='11' x='87' y='572'>T</text>
+  <rect fill='#2a2a32' x='108' y='556' width='24' height='24' rx='3'/>
+  <text fill='#aaa' font-family='Arial' font-size='11' x='113' y='572'>P</text>
+  <rect fill='#2a2a32' x='134' y='556' width='24' height='24' rx='3'/>
+  <text fill='#aaa' font-family='Arial' font-size='14' x='138' y='572'>✥</text>
+  <!-- Separador -->
+  <line stroke='#333' stroke-width='1' x1='164' y1='558' x2='164' y2='582'/>
+  <!-- Snap magnets etc -->
+  <text fill='#888' font-family='Arial' font-size='11' x='172' y='572'>⊕</text>
+  <text fill='#888' font-family='Arial' font-size='11' x='194' y='572'>🔒</text>
+  <text fill='#888' font-family='Arial' font-size='11' x='214' y='572'>🎯</text>
+  <!-- Timecode no meio -->
+  <rect fill='#0d0d15' x='850' y='557' width='220' height='26' rx='3'/>
+  <text fill='#00d4ff' font-family='monospace' font-size='18' font-weight='bold' x='855' y='576'>00:01:24:15</text>
+  <!-- Buttons direita -->
+  <text fill='#888' font-family='Arial' font-size='11' x='1540' y='572'>Sequence Settings</text>
+  <text fill='#888' font-family='Arial' font-size='11' x='1680' y='572'>🔎-</text>
+  <rect fill='#2a2a35' x='1710' y='558' width='160' height='12' rx='6'/>
+  <rect fill='#9b59d0' x='1775' y='558' width='95' height='12' rx='6'/>
+  <text fill='#888' font-family='Arial' font-size='11' x='1876' y='572'>🔎+</text>
+
+  <!-- ===== TRACK HEADERS ===== -->
+  <rect fill='#1a1a1f' x='0' y='585' width='160' height='495'/>
+
+  <!-- Track V3 -->
+  <rect fill='#1e1e26' x='0' y='585' width='160' height='40'/>
+  <rect fill='#264f78' x='2' y='590' width='3' height='28' rx='1'/>
+  <text fill='#aaccee' font-family='Arial' font-size='9' font-weight='bold' x='10' y='601'>V3</text>
+  <text fill='#555' font-family='Arial' font-size='8' x='30' y='601'>GFX / Títulos</text>
+  <text fill='#666' font-family='Arial' font-size='10' x='130' y='609'>👁 🔒</text>
+
+  <!-- Track V2 -->
+  <rect fill='#1a1a22' x='0' y='625' width='160' height='40'/>
+  <rect fill='#264f78' x='2' y='630' width='3' height='28' rx='1'/>
+  <text fill='#aaccee' font-family='Arial' font-size='9' font-weight='bold' x='10' y='641'>V2</text>
+  <text fill='#555' font-family='Arial' font-size='8' x='30' y='641'>B-Roll</text>
+  <text fill='#666' font-family='Arial' font-size='10' x='130' y='649'>👁 🔒</text>
+
+  <!-- Track V1 (principal) -->
+  <rect fill='#222228' x='0' y='665' width='160' height='55'/>
+  <rect fill='#9b59d0' x='2' y='670' width='3' height='43' rx='1'/>
+  <text fill='#9b59d0' font-family='Arial' font-size='9' font-weight='bold' x='10' y='683'>V1</text>
+  <text fill='#666' font-family='Arial' font-size='8' x='30' y='683'>Main Video</text>
+  <text fill='#9b59d0' font-family='Arial' font-size='10' x='130' y='690'>👁 🔒</text>
+  <!-- Thumbnail V1 -->
+  <rect fill='#1c2a3a' x='8' y='688' width='30' height='18' rx='1'/>
+
+  <!-- Track A1 -->
+  <rect fill='#1e1e26' x='0' y='720' width='160' height='36'/>
+  <rect fill='#4a2060' x='2' y='724' width='3' height='26' rx='1'/>
+  <text fill='#c9a0e0' font-family='Arial' font-size='9' font-weight='bold' x='10' y='738'>A1</text>
+  <text fill='#555' font-family='Arial' font-size='8' x='30' y='738'>Trilha Musical</text>
+  <text fill='#666' font-family='Arial' font-size='9' x='128' y='742'>M S</text>
+
+  <!-- Track A2 -->
+  <rect fill='#1a1a22' x='0' y='756' width='160' height='36'/>
+  <rect fill='#4a4020' x='2' y='760' width='3' height='26' rx='1'/>
+  <text fill='#e0d090' font-family='Arial' font-size='9' font-weight='bold' x='10' y='774'>A2</text>
+  <text fill='#555' font-family='Arial' font-size='8' x='30' y='774'>Voz / Narração</text>
+  <text fill='#666' font-family='Arial' font-size='9' x='128' y='778'>M S</text>
+
+  <!-- Track A3 -->
+  <rect fill='#1e1e26' x='0' y='792' width='160' height='36'/>
+  <rect fill='#204040' x='2' y='796' width='3' height='26' rx='1'/>
+  <text fill='#80d0d0' font-family='Arial' font-size='9' font-weight='bold' x='10' y='810'>A3</text>
+  <text fill='#555' font-family='Arial' font-size='8' x='30' y='810'>SFX</text>
+  <text fill='#666' font-family='Arial' font-size='9' x='128' y='814'>M S</text>
+
+  <!-- Track A4 master -->
+  <rect fill='#222228' x='0' y='828' width='160' height='36'/>
+  <rect fill='#336633' x='2' y='832' width='3' height='26' rx='1'/>
+  <text fill='#90d490' font-family='Arial' font-size='9' font-weight='bold' x='10' y='846'>🎚 Master</text>
+  <text fill='#666' font-family='Arial' font-size='9' x='128' y='846'>M S</text>
+
+  <!-- ===== DIVISOR VERTICAL TRACK AREA ===== -->
+  <rect fill='#111115' x='160' y='553' width='2' height='527'/>
+
+  <!-- ===== RULER / RÉGUA DE TEMPO ===== -->
+  <rect fill='#1a1a22' x='162' y='553' width='1758' height='30'/>
+  <!-- Marcadores de tempo -->
+  <line stroke='#444' stroke-width='1' x1='162' y1='583' x2='1920' y2='583'/>
+  <!-- Ticks principais -->
+  <line stroke='#666' stroke-width='1' x1='162' y1='568' x2='162' y2='583'/>
+  <text fill='#666' font-family='monospace' font-size='8' x='164' y='565'>00:00:00</text>
+  <line stroke='#555' stroke-width='1' x1='327' y1='573' x2='327' y2='583'/>
+  <text fill='#555' font-family='monospace' font-size='7' x='329' y='570'>:05</text>
+  <line stroke='#666' stroke-width='1' x1='492' y1='568' x2='492' y2='583'/>
+  <text fill='#666' font-family='monospace' font-size='8' x='494' y='565'>00:00:10</text>
+  <line stroke='#555' stroke-width='1' x1='657' y1='573' x2='657' y2='583'/>
+  <text fill='#555' font-family='monospace' font-size='7' x='659' y='570'>:15</text>
+  <line stroke='#666' stroke-width='1' x1='822' y1='568' x2='822' y2='583'/>
+  <text fill='#666' font-family='monospace' font-size='8' x='824' y='565'>00:00:20</text>
+  <line stroke='#555' stroke-width='1' x1='987' y1='573' x2='987' y2='583'/>
+  <text fill='#555' font-family='monospace' font-size='7' x='989' y='570'>:25</text>
+  <line stroke='#666' stroke-width='1' x1='1152' y1='568' x2='1152' y2='583'/>
+  <text fill='#666' font-family='monospace' font-size='8' x='1154' y='565'>00:00:30</text>
+  <line stroke='#555' stroke-width='1' x1='1317' y1='573' x2='1317' y2='583'/>
+  <text fill='#555' font-family='monospace' font-size='7' x='1319' y='570'>:35</text>
+  <line stroke='#666' stroke-width='1' x1='1482' y1='568' x2='1482' y2='583'/>
+  <text fill='#666' font-family='monospace' font-size='8' x='1484' y='565'>00:00:40</text>
+  <line stroke='#555' stroke-width='1' x1='1647' y1='573' x2='1647' y2='583'/>
+  <text fill='#555' font-family='monospace' font-size='7' x='1649' y='570'>:45</text>
+  <line stroke='#666' stroke-width='1' x1='1812' y1='568' x2='1812' y2='583'/>
+  <text fill='#666' font-family='monospace' font-size='8' x='1814' y='565'>00:00:50</text>
+  <!-- Mini ticks -->
+  <line stroke='#333' stroke-width='0.5' x1='195' y1='578' x2='195' y2='583'/>
+  <line stroke='#333' stroke-width='0.5' x1='228' y1='578' x2='228' y2='583'/>
+  <line stroke='#333' stroke-width='0.5' x1='261' y1='578' x2='261' y2='583'/>
+  <line stroke='#333' stroke-width='0.5' x1='294' y1='578' x2='294' y2='583'/>
+  <line stroke='#333' stroke-width='0.5' x1='360' y1='578' x2='360' y2='583'/>
+  <line stroke='#333' stroke-width='0.5' x1='393' y1='578' x2='393' y2='583'/>
+  <line stroke='#333' stroke-width='0.5' x1='426' y1='578' x2='426' y2='583'/>
+  <line stroke='#333' stroke-width='0.5' x1='459' y1='578' x2='459' y2='583'/>
+  <!-- Marcador de entrada/saída na régua -->
+  <rect fill='#9b59d030' x='492' y='555' width='495' height='28'/>
+  <line stroke='#9b59d0' stroke-width='2' x1='492' y1='555' x2='492' y2='583'/>
+  <line stroke='#9b59d0' stroke-width='2' x1='987' y1='555' x2='987' y2='583'/>
+
+  <!-- ===== CLIPS V3 (GFX) ===== -->
+  <rect fill='#604020' x='400' y='585' width='200' height='38' rx='3'/>
+  <rect fill='#705030' x='402' y='587' width='4' height='34' rx='1'/>
+  <text fill='#ffc080' font-family='Arial' font-size='8' font-weight='bold' x='412' y='600'>INTRO_LOGO.mogrt</text>
+  <text fill='#aa8060' font-family='Arial' font-size='7' x='412' y='613'>00:00:00 → 00:00:06</text>
+  <rect fill='#604020' x='700' y='585' width='300' height='38' rx='3'/>
+  <rect fill='#705030' x='702' y='587' width='4' height='34' rx='1'/>
+  <text fill='#ffc080' font-family='Arial' font-size='8' font-weight='bold' x='712' y='600'>LowerThird_THALLES_JB.mogrt</text>
+  <text fill='#aa8060' font-family='Arial' font-size='7' x='712' y='613'>00:00:21 → 00:00:30</text>
+  <rect fill='#604020' x='1200' y='585' width='180' height='38' rx='3'/>
+  <rect fill='#705030' x='1202' y='587' width='4' height='34' rx='1'/>
+  <text fill='#ffc080' font-family='Arial' font-size='8' font-weight='bold' x='1212' y='600'>CTA_Animado.mogrt</text>
+
+  <!-- ===== CLIPS V2 (B-ROLL) ===== -->
+  <rect fill='url(#clipGreen)' x='162' y='625' width='140' height='38' rx='3'/>
+  <rect fill='#3aaa70' x='164' y='627' width='4' height='34' rx='1'/>
+  <!-- Thumbnail waveform no clip V2 -->
+  <polyline fill='none' stroke='#90d4a8' stroke-width='0.8' opacity='0.6'
+    points='172,645 182,638 192,648 202,636 212,644 222,637 232,650 242,638 252,645 262,640 272,648 280,636 290,644 302,638'/>
+  <text fill='#90d4a8' font-family='Arial' font-size='7' x='172' y='660'>BRoll_Ruas_01</text>
+  <rect fill='url(#clipGreen)' x='330' y='625' width='200' height='38' rx='3'/>
+  <polyline fill='none' stroke='#90d4a8' stroke-width='0.8' opacity='0.6'
+    points='338,645 350,637 365,649 380,636 395,645 410,638 425,651 440,637 455,644 470,640 485,648 500,636 515,644 528,638'/>
+  <text fill='#90d4a8' font-family='Arial' font-size='7' x='338' y='660'>BRoll_Estudio_02</text>
+  <rect fill='url(#clipGreen)' x='620' y='625' width='260' height='38' rx='3'/>
+  <polyline fill='none' stroke='#90d4a8' stroke-width='0.8' opacity='0.6'
+    points='628,645 645,636 662,650 678,635 694,645 710,638 726,652 742,637 758,645 774,639 790,648 806,635 822,643 838,637 854,649 870,637'/>
+  <text fill='#90d4a8' font-family='Arial' font-size='7' x='628' y='660'>DroneFlight_Sunset_4K</text>
+  <rect fill='url(#clipGreen)' x='950' y='625' width='180' height='38' rx='3'/>
+  <text fill='#90d4a8' font-family='Arial' font-size='7' x='958' y='660'>BRoll_Produto_03</text>
+  <rect fill='url(#clipGreen)' x='1200' y='625' width='240' height='38' rx='3'/>
+  <text fill='#90d4a8' font-family='Arial' font-size='7' x='1208' y='660'>BRoll_Ruas_04</text>
+  <rect fill='url(#clipGreen)' x='1520' y='625' width='200' height='38' rx='3'/>
+  <text fill='#90d4a8' font-family='Arial' font-size='7' x='1528' y='660'>BRoll_Aerial_05</text>
+
+  <!-- ===== CLIPS V1 (PRINCIPAL) - MAIS ALTOS E COLORIDOS ===== -->
+  <!-- Clip 1 - Azul -->
+  <rect fill='url(#clipBlue)' x='162' y='665' width='240' height='53' rx='3'/>
+  <rect fill='#5090cc' x='164' y='667' width='5' height='49' rx='1'/>
+  <!-- Thumbnail visual no clip V1 -->
+  <rect fill='#1c2a3a' x='170' y='670' width='40' height='27' rx='1'/>
+  <rect fill='#253545' x='170' y='682' width='40' height='15'/>
+  <rect fill='#1a2535' x='172' y='672' width='8' height='23'/>
+  <rect fill='#1a2535' x='183' y='677' width='6' height='18'/>
+  <rect fill='#1a2535' x='192' y='674' width='10' height='21'/>
+  <text fill='#a8c7eb' font-family='Arial' font-size='8' font-weight='bold' x='215' y='683'>Abertura_4K.mp4</text>
+  <text fill='#7aacde' font-family='Arial' font-size='7' x='215' y='694'>00:00 → 00:08 · 4K</text>
+  <!-- Keyframe markers -->
+  <polygon fill='#ffd700' points='225,711 228,707 231,711 228,715' opacity='0.8'/>
+  <polygon fill='#ffd700' points='260,711 263,707 266,711 263,715' opacity='0.8'/>
+  <polygon fill='#ffd700' points='295,711 298,707 301,711 298,715' opacity='0.8'/>
+  <!-- Keyframe line -->
+  <line stroke='#ffd700' stroke-width='0.5' opacity='0.3' x1='225' y1='711' x2='295' y2='711'/>
+
+  <!-- Clip 2 - Verde (B-Roll overlap) -->
+  <rect fill='url(#clipBlue)' x='402' y='665' width='190' height='53' rx='3'/>
+  <rect fill='#5090cc' x='404' y='667' width='5' height='49' rx='1'/>
+  <rect fill='#1c2a3a' x='410' y='670' width='40' height='27' rx='1'/>
+  <text fill='#a8c7eb' font-family='Arial' font-size='8' font-weight='bold' x='456' y='683'>TalkingHead_B.mp4</text>
+  <text fill='#7aacde' font-family='Arial' font-size='7' x='456' y='694'>00:12 → 00:18</text>
+
+  <!-- Clip 3 - Azul principal longo -->
+  <rect fill='url(#clipBlue)' x='592' y='665' width='360' height='53' rx='3'/>
+  <rect fill='#5090cc' x='594' y='667' width='5' height='49' rx='1'/>
+  <rect fill='#1c2a3a' x='600' y='670' width='40' height='27' rx='1'/>
+  <rect fill='#1e3550' x='600' y='682' width='40' height='15'/>
+  <text fill='#a8c7eb' font-family='Arial' font-size='8' font-weight='bold' x='648' y='683'>Entrevista_Main_4K.mp4</text>
+  <text fill='#7aacde' font-family='Arial' font-size='7' x='648' y='694'>00:18 → 00:30 · 4K 60fps</text>
+  <polygon fill='#ffd700' points='700,711 703,707 706,711 703,715' opacity='0.8'/>
+  <polygon fill='#ffd700' points='750,711 753,707 756,711 753,715' opacity='0.8'/>
+  <polygon fill='#ffd700' points='800,711 803,707 806,711 803,715' opacity='0.8'/>
+  <polygon fill='#ffd700' points='850,711 853,707 856,711 853,715' opacity='0.8'/>
+  <polygon fill='#ffd700' points='900,711 903,707 906,711 903,715' opacity='0.8'/>
+  <line stroke='#ffd700' stroke-width='0.5' opacity='0.3' x1='700' y1='711' x2='900' y2='711'/>
+
+  <!-- Clip 4 -->
+  <rect fill='url(#clipBlue)' x='952' y='665' width='200' height='53' rx='3'/>
+  <rect fill='#5090cc' x='954' y='667' width='5' height='49' rx='1'/>
+  <text fill='#a8c7eb' font-family='Arial' font-size='8' font-weight='bold' x='965' y='686'>BRoll_Especial.mp4</text>
+
+  <!-- Clip 5 - Laranja (destaque) -->
+  <rect fill='url(#clipYellow)' x='1152' y='665' width='280' height='53' rx='3'/>
+  <rect fill='#d0a050' x='1154' y='667' width='5' height='49' rx='1'/>
+  <rect fill='#1a1208' x='1162' y='670' width='40' height='27' rx='1'/>
+  <rect fill='#2a1e08' x='1162' y='682' width='40' height='15'/>
+  <text fill='#ffcc80' font-family='Arial' font-size='8' font-weight='bold' x='1208' y='683'>DroneFlight_4K_RAW.mp4</text>
+  <text fill='#ccaa60' font-family='Arial' font-size='7' x='1208' y='694'>00:36 → 00:45 · 6K</text>
+
+  <!-- Clip 6 -->
+  <rect fill='url(#clipBlue)' x='1432' y='665' width='240' height='53' rx='3'/>
+  <rect fill='#5090cc' x='1434' y='667' width='5' height='49' rx='1'/>
+  <text fill='#a8c7eb' font-family='Arial' font-size='8' font-weight='bold' x='1445' y='686'>Entrevista_Final.mp4</text>
+
+  <!-- Clip 7 -->
+  <rect fill='url(#clipBlue)' x='1672' y='665' width='200' height='53' rx='3'/>
+  <text fill='#a8c7eb' font-family='Arial' font-size='8' font-weight='bold' x='1683' y='686'>Outro_Animado.mp4</text>
+
+  <!-- Transição entre clips V1 -->
+  <rect fill='#9b59d0' opacity='0.5' x='392' y='672' width='20' height='39' rx='2'/>
+  <text fill='white' font-family='Arial' font-size='6' x='395' y='695'>✕</text>
+  <rect fill='#9b59d0' opacity='0.5' x='582' y='672' width='20' height='39' rx='2'/>
+  <text fill='white' font-family='Arial' font-size='6' x='585' y='695'>✕</text>
+  <rect fill='#9b59d0' opacity='0.5' x='942' y='672' width='20' height='39' rx='2'/>
+  <rect fill='#9b59d0' opacity='0.5' x='1142' y='672' width='20' height='39' rx='2'/>
+  <rect fill='#9b59d0' opacity='0.5' x='1422' y='672' width='20' height='39' rx='2'/>
+  <rect fill='#9b59d0' opacity='0.5' x='1662' y='672' width='20' height='39' rx='2'/>
+
+  <!-- ===== AUDIO A1 - TRILHA MUSICAL (waveform rico) ===== -->
+  <rect fill='#1a0a28' x='162' y='720' width='1758' height='34' rx='2'/>
+  <rect fill='#4a2060' x='162' y='720' width='1756' height='34' rx='2'/>
+  <rect fill='#602080' x='164' y='722' width='4' height='30' rx='1'/>
+  <!-- Waveform rico e variado -->
+  <polyline fill='none' stroke='#c9a0e0' stroke-width='1.2' opacity='0.9'
+    points='170,737 178,726 186,742 194,724 202,738 210,727 218,743 226,725 234,737 242,728 250,741 258,726 266,738 274,727 282,742 290,726 298,737 306,729 314,741 322,727 330,737 338,730 346,740 354,728 362,736 370,729 378,741 386,727 394,736 402,730 410,738 418,728 426,735 434,731 442,737 450,729 458,738 466,728 474,735 482,730 490,737 498,729 506,736 514,730 522,737 530,728 538,736 546,730 554,738 562,727 570,736 578,729 586,737 594,730 602,736 610,729 618,736 626,730 634,737 642,729 650,736 658,730 666,737 674,729 682,736 690,729 698,736 706,730 714,737 722,729 730,736 738,730 746,737 754,729 762,736 770,730 778,738 786,729 794,736 802,730 810,737 818,729 826,736 834,730 842,738 850,728 858,736 866,730 874,737 882,729 890,736 898,730 906,737 914,729 922,736 930,730 938,737 946,729 954,736 962,730 970,737 978,729 986,736 994,730 1002,737 1010,729 1018,736 1026,730 1034,737 1042,729 1050,736 1058,730 1066,737 1074,729 1082,736 1090,730 1098,737 1106,729 1114,736 1122,730 1130,737 1138,729 1146,736 1154,730 1162,737 1170,729 1178,736 1186,730 1194,737 1202,729 1210,736 1218,730 1226,737 1234,729 1242,736 1250,730 1258,737 1266,729 1274,736 1282,730 1290,737 1298,729 1306,736 1314,730 1322,737 1330,729'/>
+  <text fill='#9070b0' font-family='Arial' font-size='7' x='1340' y='740'>Trilha_Epic_Cinematic.wav · 44.1kHz · Stereo</text>
+
+  <!-- ===== AUDIO A2 - VOZ (waveform narração) ===== -->
+  <rect fill='#1e1a08' x='162' y='756' width='1758' height='34' rx='2'/>
+  <rect fill='#4a4020' x='162' y='756' width='400' height='34' rx='2'/>
+  <rect fill='#5a5028' x='164' y='758' width='4' height='30' rx='1'/>
+  <polyline fill='none' stroke='#e0d090' stroke-width='1' opacity='0.8'
+    points='170,773 180,762 190,776 200,763 210,774 220,764 230,775 240,764 250,773 260,766 270,774 280,765 290,773 310,773 320,764 330,775 340,764 350,773 360,766 370,774 380,765 390,773 400,773 410,764 420,775 430,764 440,773 450,766 460,774 470,765 480,773 490,773 500,764 510,775 520,765 530,773 540,766 550,774 558,773'/>
+  <rect fill='#4a4020' x='600' y='756' width='550' height='34' rx='2'/>
+  <rect fill='#5a5028' x='602' y='758' width='4' height='30' rx='1'/>
+  <polyline fill='none' stroke='#e0d090' stroke-width='1' opacity='0.8'
+    points='608,773 618,762 628,776 638,763 648,774 658,764 668,775 678,764 688,773 698,766 708,774 718,765 728,773 738,766 748,774 758,764 768,773 778,766 788,775 798,763 808,774 818,764 828,773 838,766 848,774 858,765 868,773 878,764 888,775 898,764 908,773 918,766 928,774 938,765 948,773 958,764 968,775 978,764 988,773 998,766 1008,774 1018,765 1028,773 1038,764 1048,775 1058,764 1068,773 1078,766 1088,774 1098,765 1108,773 1118,766 1128,774 1138,765 1148,773'/>
+  <text fill='#a09060' font-family='Arial' font-size='7' x='1160' y='776'>VozOff_Narração_Final.wav</text>
+
+  <!-- ===== AUDIO A3 - SFX ===== -->
+  <rect fill='#081a1a' x='162' y='792' width='1758' height='34' rx='2'/>
+  <!-- SFX spots individuais -->
+  <rect fill='#204040' x='250' y='794' width='35' height='30' rx='2'/>
+  <polyline fill='none' stroke='#80d0d0' stroke-width='1' opacity='0.7'
+    points='252,809 257,800 262,812 267,802 272,810 277,803 282,811 285,809'/>
+  <rect fill='#204040' x='490' y='794' width='25' height='30' rx='2'/>
+  <polyline fill='none' stroke='#80d0d0' stroke-width='1' opacity='0.7'
+    points='492,809 497,800 502,812 507,802 512,809'/>
+  <rect fill='#204040' x='750' y='794' width='40' height='30' rx='2'/>
+  <polyline fill='none' stroke='#80d0d0' stroke-width='1' opacity='0.7'
+    points='752,809 758,800 764,814 770,801 776,810 782,803 788,809'/>
+  <rect fill='#204040' x='1050' y='794' width='30' height='30' rx='2'/>
+  <rect fill='#204040' x='1350' y='794' width='45' height='30' rx='2'/>
+  <rect fill='#204040' x='1600' y='794' width='30' height='30' rx='2'/>
+  <text fill='#50a0a0' font-family='Arial' font-size='7' x='1640' y='811'>SFX_Pack_01.wav</text>
+
+  <!-- ===== PLAYHEAD ===== -->
+  <line stroke='#ff4d1c' stroke-width='2' x1='822' y1='553' x2='822' y2='1080' filter='url(#softglow)'/>
+  <polygon fill='#ff4d1c' points='816,553 828,553 822,565'/>
+  <rect fill='#ff4d1c' x='816' y='553' width='12' height='10'/>
+  <text fill='white' font-family='monospace' font-size='7' font-weight='bold' x='803' y='562'>00:00:20</text>
+
+  <!-- Marcador de entrada -->
+  <polygon fill='#9b59d0' points='492,553 492,568 505,568' opacity='0.8'/>
+  <!-- Marcador de saída -->
+  <polygon fill='#9b59d0' points='987,553 987,568 974,568' opacity='0.8'/>
+
+  <!-- ===== AUDIO MASTER FADER ===== -->
+  <rect fill='#111115' x='162' y='828' width='1758' height='36'/>
+  <!-- Master audio waveform comprimido -->
+  <rect fill='#162016' x='164' y='832' width='1752' height='28' rx='2'/>
+  <polyline fill='none' stroke='#28c840' stroke-width='0.8' opacity='0.5'
+    points='166,846 200,838 250,848 300,836 350,846 400,839 450,848 500,838 550,846 600,840 650,847 700,839 750,846 800,840 822,844 850,840 900,847 950,839 1000,847 1050,840 1100,846 1150,840 1200,847 1250,840 1300,846 1350,840 1400,847 1450,840 1500,847 1550,840 1600,847 1650,840 1700,847 1750,840 1800,847 1850,840 1900,847'/>
+
+  <!-- ===== BARRA STATUS INFERIOR ===== -->
+  <rect fill='#111115' x='0' y='1064' width='1920' height='16'/>
+  <text fill='#555' font-family='Arial' font-size='7' x='8' y='1075'>Sequência_Final_v3 · 1920x1080 · 30fps · 48000Hz · 02:34:18 · 5 Video Tracks · 4 Audio Tracks</text>
+  <text fill='#555' font-family='Arial' font-size='7' x='800' y='1075'>Renderizando: 847 frames · RAM: 24.3GB / 32GB · GPU: RTX 3080</text>
+  <text fill='#555' font-family='Arial' font-size='7' x='1600' y='1075'>🖥 Thalles JB · Adobe Premiere Pro 2025</text>
+
+  <!-- ===== OVERLAY DE PROFUNDIDADE (vinheta) ===== -->
+  <radialGradient id='vignette' cx='50%' cy='50%' r='70%'>
+    <stop offset='0%' stop-color='transparent'/>
+    <stop offset='100%' stop-color='#000000' stop-opacity='0.4'/>
+  </radialGradient>
+  <rect fill='url(#vignette)' width='1920' height='1080'/>
+
+</svg></div>
   <div class="hero-content">
     <div class="hero-tag reveal">Disponível para projetos</div>
     <h1 class="reveal delay-1"><div>Editor</div><div class="line2">de Vídeo</div><div class="line3">Criativo</div></h1>
@@ -1124,3 +1936,5 @@ let idleTimer = setTimeout(() => {
   }
 }, 40000);
 document.addEventListener('touchstart', () => { clearTimeout(idleTime
+
+                                                  
