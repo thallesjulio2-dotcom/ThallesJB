@@ -309,111 +309,22 @@ document.addEventListener('mousemove', () => { clearTimeout(idleTimer); });
   </div>
 </div>
 
-<!-- QUIZ DE SAÍDA -->
-<div class="exit-overlay" id="exit-overlay">
-  <div class="exit-popup">
-    <button class="exit-close" onclick="closeExit()">✕</button>
-
-    <!-- STEP 1: Pergunta principal -->
-    <div class="exit-step active" id="exit-step1">
-      <div class="exit-popup-top">
-        <div class="exit-progress">
-          <div class="exit-progress-dot active" id="dot1"></div>
-          <div class="exit-progress-dot" id="dot2"></div>
-        </div>
-        <span class="exit-emoji">🤔</span>
-        <div class="exit-question">Ei, antes de ir...<br><span>tudo bem?</span></div>
-        <p class="exit-sub">Você passou um tempinho aqui — mas saiu sem falar nada. Me conta o que aconteceu? 👇</p>
-      </div>
-      <div class="exit-popup-body">
-        <div class="exit-choices">
-          <button class="exit-choice" onclick="goStep('yes')">
-            <span class="exit-choice-icon">🔥</span>
-            <div class="exit-choice-text">
-              <span class="exit-choice-title">Gostei muito! Quero fechar com você</span>
-              <span class="exit-choice-desc">Os vídeos são exatamente o que eu preciso</span>
-            </div>
-          </button>
-          <button class="exit-choice" onclick="goStep('price')">
-            <span class="exit-choice-icon">💸</span>
-            <div class="exit-choice-text">
-              <span class="exit-choice-title">Achei os preços um pouco altos pra mim</span>
-              <span class="exit-choice-desc">O conteúdo é ótimo, mas o valor me travou</span>
-            </div>
-          </button>
-          <button class="exit-choice" onclick="closeExit()">
-            <span class="exit-choice-icon">👀</span>
-            <div class="exit-choice-text">
-              <span class="exit-choice-title">Só tô dando uma olhada por enquanto</span>
-              <span class="exit-choice-desc">Ainda não decidi nada</span>
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 2A: Quer fechar -->
-    <div class="exit-step" id="exit-step-yes">
-      <div class="exit-popup-top">
-        <div class="exit-progress">
-          <div class="exit-progress-dot done" id="dot1a"></div>
-          <div class="exit-progress-dot active" id="dot2a"></div>
-        </div>
-        <span class="exit-emoji">🚀</span>
-        <div class="exit-question">Que <span>ótimo!</span><br>Bora fazer isso!</div>
-        <p class="exit-sub">Tô com algumas vagas abertas esse mês — e quero muito ver o seu conteúdo decolar. Me manda uma mensagem agora e a gente começa hoje mesmo! ⚡</p>
-      </div>
-      <div class="exit-popup-body">
-        <div style="background:rgba(37,211,102,.07);border:1px solid rgba(37,211,102,.2);padding:16px 18px;border-radius:4px;margin-bottom:20px;display:flex;align-items:center;gap:14px">
-          <span style="font-size:28px">🎁</span>
-          <div>
-            <div style="font-size:13px;font-weight:600;color:#f5f3ee;margin-bottom:3px">Bônus especial pra quem decide agora</div>
-            <div style="font-size:12px;color:rgba(245,243,238,.55);line-height:1.5">Feche hoje e ganhe <strong style="color:#25D366">1 revisão extra gratuita</strong> no seu primeiro pacote. 🎯</div>
-          </div>
-        </div>
-        <a href="https://wa.me/5531985216470?text=Thalles%2C%20estava%20no%20seu%20site%20e%20quero%20fechar%21%20Pode%20me%20passar%20mais%20detalhes%20pra%20a%20gente%20come%C3%A7ar%3F%20%F0%9F%9A%80" target="_blank" class="exit-wa-big" onclick="closeExit()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quero fechar agora! 🔥
-        </a>
-        <button class="exit-skip-link" onclick="closeExit()">Talvez depois...</button>
-      </div>
-    </div>
-
-    <!-- STEP 2B: Preço alto -->
-    <div class="exit-step" id="exit-step-price">
-      <div class="exit-popup-top">
-        <div class="exit-progress">
-          <div class="exit-progress-dot done"></div>
-          <div class="exit-progress-dot active"></div>
-        </div>
-        <span class="exit-emoji">💜</span>
-        <div class="exit-question">Entendo 100%!<br><span>Tenho uma proposta</span></div>
-        <p class="exit-sub">Preço não pode ser o motivo de você perder vídeos que vão transformar o seu conteúdo. Por isso, só pra você que ficou até aqui... 👇</p>
-      </div>
-      <div class="exit-popup-body">
-        <div class="exit-desconto-box">
-          <div style="display:flex;align-items:flex-end;gap:12px;margin-bottom:6px">
-            <div class="exit-desconto-num">10%</div>
-            <div style="padding-bottom:10px">
-              <div style="font-size:14px;font-weight:700;color:#f5f3ee">DE DESCONTO</div>
-              <div style="font-size:11px;color:rgba(245,243,238,.45)">no seu primeiro pacote</div>
-            </div>
-          </div>
-          <div class="exit-desconto-label">✅ Desconto exclusivo · válido só essa semana</div>
-        </div>
-        <p style="font-size:13px;color:rgba(245,243,238,.55);line-height:1.6;margin-bottom:20px">
-          Me manda uma mensagem dizendo que veio pelo site e já aplico o desconto no seu orçamento. <strong style="color:#f5f3ee">Sem enrolação, sem burocracia.</strong> 💬
-        </p>
-        <a href="https://wa.me/5531985216470?text=Thalles%2C%20estava%20no%20seu%20site%20e%20vi%20que%20tem%20um%20desconto%20de%2010%25%20pra%20quem%20veio%20pelo%20site%21%20Quero%20aproveitar%20e%20saber%20mais%20sobre%20os%20pacotes%20%F0%9F%98%8A" target="_blank" class="exit-wa-desconto" onclick="closeExit()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quero meu desconto de 10%! 😍
-        </a>
-        <button class="exit-skip-link" onclick="closeExit()">Não, obrigado</button>
-      </div>
-    </div>
-
+// ===== EXIT → oferta.html =====
+let exitShown = false;
+function showExit() {
+  if (exitShown) return;
+  exitShown = true;
+  window.location.href = 'oferta.html';
+}
+document.addEventListener('mouseleave', (e) => {
+  if (e.clientY <= 0 && !exitShown) showExit();
+});
+let idleTimer = setTimeout(() => { if (!exitShown) showExit(); }, 45000);
+document.addEventListener('touchstart', () => { clearTimeout(idleTimer); });
+document.addEventListener('mousemove', () => { clearTimeout(idleTimer); });
+</script>
   </div>
-</div>
+</div> 
 
 <nav>
   <div class="nav-logo">Thalles<span>JB</span></div>
