@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espera! Oferta Exclusiva — Thalles JB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#080808;
+  --white:#f4f1ec;
+  --accent:#ff4d1c;
+  --accent2:#ff8c00;
+  --green:#22c55e;
+  --gray:#111;
+  --gray2:#1c1c1c;
+  --muted:#555;
+  --font-head:'Barlow Condensed',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+}
+
+html{scroll-behavior:smooth;height:100%}
+body{
+  font-family:var(--font-body);
+  background:var(--black);
+  color:var(--white);
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* ── RUÍDO DE FUNDO ── */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:.5;
+}
+
+/* ── LINHAS DECORATIVAS ── */
+.deco-lines{
+  position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+}
+.deco-lines::before{
+  content:'';position:absolute;
+  top:-20%;left:55%;
+  width:1px;height:140%;
+  background:linear-gradient(to bottom,transparent,rgba(255,77,28,.12),rgba(255,77,28,.06),transparent);
+  transform:rotate(-8deg);
+}
+.deco-lines::after{
+  content:'';position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(to right,transparent,rgba(255,77,28,.3),transparent);
+}
+
+/* ── BARRA SUPERIOR DE URGÊNCIA ── */
+.urgency-bar{
+  position:relative;z-index:10;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));
+  background-size:200% 100%;
+  animation:barSlide 3s ease-in-out infinite;
+  padding:10px 20px;
+  text-align:center;
+  font-family:var(--font-head);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+@keyframes barSlide{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.urgency-bar .dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#fff;
+  animation:dotBlink 1s ease-in-out infinite;
+}
+@keyframes dotBlink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── LOGO BAR ── */
+.logo-bar{
+  position:relative;z-index:10;
+  padding:20px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.logo{
+  font-family:var(--font-head);
+  font-size:22px;font-weight:900;
+  letter-spacing:2px;text-transform:uppercase;
+}
+.logo span{color:var(--accent)}
+.back-link{
+  font-size:12px;color:rgba(255,255,255,.35);
+  text-decoration:none;letter-spacing:.06em;
+  text-transform:uppercase;
+  display:flex;align-items:center;gap:6px;
+  transition:color .2s;
+}
+.back-link:hover{color:rgba(255,255,255,.7)}
+
+/* ── CONTAINER PRINCIPAL ── */
+.main{
+  position:relative;z-index:10;
+  max-width:900px;
+  margin:0 auto;
+  padding:60px 40px 80px;
+}
+
+/* ── BADGE DE OFERTA ── */
+.offer-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid rgba(255,77,28,.5);
+  border-radius:100px;
+  padding:7px 18px;
+  font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);
+  margin-bottom:28px;
+  animation:badgePulse 2s ease-in-out infinite;
+}
+@keyframes badgePulse{
+  0%,100%{border-color:rgba(255,77,28,.5);box-shadow:0 0 0 0 rgba(255,77,28,0)}
+  50%{border-color:rgba(255,77,28,.9);box-shadow:0 0 12px 2px rgba(255,77,28,.15)}
+}
+.offer-badge .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--accent);
+  animation:dotBlink 1.2s ease-in-out infinite;
+}
+
+/* ── HEADLINE PRINCIPAL ── */
+.headline{
+  font-family:var(--font-head);
+  font-size:clamp(62px,9vw,110px);
+  font-weight:900;
+  line-height:.88;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:28px;
+}
+.headline .line-accent{color:var(--accent)}
+.headline .line-outline{
+  -webkit-text-stroke:1.5px rgba(244,241,236,.2);
+  color:transparent;
+}
+
+/* ── SUBTÍTULO ── */
+.subline{
+  font-size:16px;line-height:1.7;
+  color:rgba(244,241,236,.55);
+  max-width:560px;
+  margin-bottom:48px;
+}
+.subline strong{color:var(--white)}
+
+/* ── BLOCO DO DESCONTO ── */
+.discount-block{
+  display:flex;gap:24px;align-items:stretch;
+  margin-bottom:48px;
+  flex-wrap:wrap;
+}
+.discount-card{
+  flex:1;min-width:200px;
+  background:linear-gradient(135deg,rgba(255,77,28,.12) 0%,rgba(255,140,0,.06) 100%);
+  border:1px solid rgba(255,77,28,.3);
+  padding:32px 28px;
+  position:relative;
+  overflow:hidden;
+}
+.discount-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+}
+.discount-pct{
+  font-family:var(--font-head);
+  font-size:80px;font-weight:900;
+  line-height:.9;letter-spacing:2px;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+.discount-label{
+  font-size:12px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(244,241,236,.7);
+}
+.discount-sub{
+  font-size:12px;color:rgba(244,241,236,.4);
+  margin-top:6px;line-height:1.5;
+}
+
+.benefits-card{
+  flex:1.4;min-width:220px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  padding:28px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.benefit-item{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:14px;line-height:1.5;
+  color:rgba(244,241,236,.75);
+}
+.benefit-icon{
+  font-size:18px;flex-shrink:0;margin-top:1px;
+}
+.benefit-text strong{color:var(--white);display:block;font-size:14px}
+
+/* ── TIMER ── */
+.timer-block{
+  margin-bottom:44px;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.timer-label{
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);
+}
+.timer-display{
+  display:flex;align-items:center;gap:8px;
+}
+.timer-unit{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+}
+.timer-num{
+  font-family:var(--font-head);
+  font-size:32px;font-weight:900;letter-spacing:1px;
+  color:var(--accent);
+  background:rgba(255,77,28,.1);
+  border:1px solid rgba(255,77,28,.2);
+  padding:6px 14px;
+  min-width:60px;text-align:center;
+  line-height:1;
+}
+.timer-name{
+  font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);
+}
+.timer-sep{
+  font-family:var(--font-head);
+  font-size:28px;font-weight:900;
+  color:rgba(255,77,28,.4);
+  margin-bottom:16px;
+}
+
+/* ── CTA ── */
+.cta-group{
+  display:flex;flex-direction:column;gap:16px;
+  max-width:520px;
+}
+.btn-wa-main{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  background:var(--green);
+  color:#fff;padding:20px 36px;
+  font-family:var(--font-head);
+  font-size:22px;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;
+  position:relative;overflow:hidden;
+  transition:transform .15s,filter .15s;
+  border:2px solid transparent;
+  animation:ctaPulse 2.5s ease-in-out infinite;
+}
+@keyframes ctaPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.4)}
+  50%{box-shadow:0 0 28px 8px rgba(34,197,94,.2)}
+}
+.btn-wa-main:hover{
+  transform:translateY(-3px);
+  filter:brightness(1.08);
+  animation:none;
+  box-shadow:0 12px 40px rgba(34,197,94,.4);
+}
+.btn-wa-main .wa-arrow{
+  font-size:18px;
+  transition:transform .2s;
+}
+.btn-wa-main:hover .wa-arrow{transform:translateX(4px)}
+
+.btn-back{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.1);
+  color:rgba(244,241,236,.4);
+  padding:14px 36px;
+  font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;
+  transition:border-color .2s,color .2s;font-family:var(--font-body);
+}
+.btn-back:hover{border-color:rgba(255,255,255,.25);color:rgba(244,241,236,.7)}
+
+/* ── PROVA SOCIAL INLINE ── */
+.proof-strip{
+  margin-top:52px;padding-top:40px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.proof-label{
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.proof-label::after{content:'';height:1px;width:32px;background:var(--muted);display:block}
+.proof-items{
+  display:flex;flex-direction:column;gap:14px;
+}
+.proof-item{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  padding:14px 18px;
+}
+.proof-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-head);font-size:16px;font-weight:900;
+  flex-shrink:0;color:#fff;
+}
+.proof-text{display:flex;flex-direction:column;gap:2px;flex:1}
+.proof-name{font-size:13px;font-weight:600;color:var(--white)}
+.proof-action{font-size:11px;color:rgba(244,241,236,.45)}
+.proof-time{
+  font-size:10px;color:var(--green);
+  font-weight:600;letter-spacing:.04em;
+  white-space:nowrap;
+}
+
+/* ── GARANTIA ── */
+.guarantee-strip{
+  margin-top:36px;
+  display:flex;align-items:center;gap:12px;
+  color:rgba(244,241,236,.4);font-size:12px;
+  line-height:1.5;
+  padding:16px 20px;
+  border:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.02);
+}
+.guarantee-icon{font-size:22px;flex-shrink:0}
+
+/* ── ENTER ANIMATION ── */
+.fade-up{
+  opacity:0;transform:translateY(28px);
+  animation:fadeUp .7s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.delay-1{animation-delay:.08s}
+.delay-2{animation-delay:.18s}
+.delay-3{animation-delay:.28s}
+.delay-4{animation-delay:.38s}
+.delay-5{animation-delay:.50s}
+.delay-6{animation-delay:.64s}
+.delay-7{animation-delay:.78s}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  .main{padding:40px 20px 60px}
+  .logo-bar{padding:16px 20px}
+  .discount-block{flex-direction:column}
+  .discount-pct{font-size:64px}
+  .headline{font-size:58px}
+  .btn-wa-main{font-size:18px;padding:18px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="deco-lines"></div>
+
+<!-- BARRA DE URGÊNCIA -->
+<div class="urgency-bar fade-up">
+  <div class="dot"></div>
+  ⚡ Oferta exclusiva para quem estava no site agora — válida somente hoje
+  <div class="dot"></div>
+</div>
+
+<!-- LOGO -->
+<div class="logo-bar fade-up delay-1">
+  <div class="logo">Thalles<span>JB</span></div>
+  <a href="index.html" class="back-link">← Voltar ao site</a>
+</div>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<div class="main">
+
+  <div class="offer-badge fade-up delay-2">
+    <div class="dot"></div>
+    Oferta de saída exclusiva · só por hoje
+  </div>
+
+  <h1 class="headline fade-up delay-2">
+    <div>ANTES DE IR,</div>
+    <div class="line-accent">10% OFF</div>
+    <div class="line-outline">NO SEU PEDIDO</div>
+  </h1>
+
+  <p class="subline fade-up delay-3">
+    Você estava explorando o site e a gente quer te dar um <strong>motivo concreto para começar hoje</strong>. 
+    Me chama no WhatsApp agora, diz que veio pela página de oferta e eu aplico o desconto 
+    <strong>direto no seu orçamento — sem enrolação.</strong>
+  </p>
+
+  <!-- BLOCO DE DESCONTO + BENEFÍCIOS -->
+  <div class="discount-block fade-up delay-3">
+    <div class="discount-card">
+      <div class="discount-pct">10%</div>
+      <div class="discount-label">de desconto</div>
+      <div class="discount-sub">no primeiro pacote de vídeos — qualquer serviço, qualquer quantidade.</div>
+    </div>
+    <div class="benefits-card">
+      <div class="benefit-item">
+        <div class="benefit-icon">⚡</div>
+        <div class="benefit-text">
+          <strong>Entrega rápida garantida</strong>
+          Seus vídeos prontos no prazo combinado, sem atrasos.
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🎯</div>
+        <div class="benefit-text">
+          <strong>Foco total em retenção</strong>
+          Edição pensada para prender o scroll do primeiro segundo.
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🔁</div>
+        <div class="benefit-text">
+          <strong>1 revisão incluída</strong>
+          Ajuste o que precisar sem custo extra.
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💬</div>
+        <div class="benefit-text">
+          <strong>Atendimento direto comigo</strong>
+          Sem intermediários, sem demora.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMER -->
+  <div class="timer-block fade-up delay-4">
+    <div class="timer-label">Oferta expira em</div>
+    <div class="timer-display">
+      <div class="timer-unit">
+        <div class="timer-num" id="t-h">23</div>
+        <div class="timer-name">horas</div>
+      </div>
+      <div class="timer-sep">:</div>
+      <div class="timer-unit">
+        <div class="timer-num" id="t-m">59</div>
+        <div class="timer-name">min</div>
+      </div>
+      <div class="timer-sep">:</div>
+      <div class="timer-unit">
+        <div class="timer-num" id="t-s">59</div>
+        <div class="timer-name">seg</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTAs -->
+  <div class="cta-group fade-up delay-5">
+    <a 
+      href="https://wa.me/5531985216470?text=Thalles%2C%20estava%20no%20seu%20site%20e%20vi%20a%20p%C3%A1gina%20de%20oferta%21%20Quero%20aproveitar%20o%20desconto%20de%2010%25%20no%20meu%20primeiro%20pacote.%20Pode%20me%20passar%20o%20or%C3%A7amento%3F%20%F0%9F%98%8A"
+      target="_blank"
+      class="btn-wa-main"
+    >
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Quero meus 10% de desconto!
+      <span class="wa-arrow">→</span>
+    </a>
+    <a href="index.html" class="btn-back">
+      Não, obrigado — voltar ao site
+    </a>
+  </div>
+
+  <!-- PROVA SOCIAL -->
+  <div class="proof-strip fade-up delay-6">
+    <div class="proof-label">Quem aproveitou recentemente</div>
+    <div class="proof-items">
+      <div class="proof-item">
+        <div class="proof-avatar">C</div>
+        <div class="proof-text">
+          <div class="proof-name">Camila R.</div>
+          <div class="proof-action">Fechou pacote de 8 Reels com desconto</div>
+        </div>
+        <div class="proof-time">há 12 min</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-avatar">R</div>
+        <div class="proof-text">
+          <div class="proof-name">Rafael N.</div>
+          <div class="proof-action">Fechou edição de podcast + 3 Reels</div>
+        </div>
+        <div class="proof-time">há 34 min</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-avatar">J</div>
+        <div class="proof-text">
+          <div class="proof-name">Juliana P.</div>
+          <div class="proof-action">Assinou pacote mensal com o desconto</div>
+        </div>
+        <div class="proof-time">há 1h</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GARANTIA -->
+  <div class="guarantee-strip fade-up delay-7">
+    <div class="guarantee-icon">🔒</div>
+    <div>
+      <strong style="color:rgba(244,241,236,.7)">Sem compromisso.</strong> 
+      Me chama, me conta o que você precisa e eu te dou um orçamento gratuito com o desconto de 10% aplicado. 
+      Se não gostar, sem problema — sem pressão.
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+// ── TIMER REGRESSIVO ──
+// Pega ou cria deadline persistente (expira à meia-noite do dia atual)
+function getMidnight() {
+  const d = new Date();
+  d.setHours(23,59,59,0);
+  return d.getTime();
+}
+const deadline = getMidnight();
+
+function updateTimer() {
+  const now = Date.now();
+  let diff = Math.max(0, deadline - now);
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('t-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('t-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('t-s').textContent = String(s).padStart(2,'0');
+}
+updateTimer();
+setInterval(updateTimer, 1000);
+</script>
+</body>
+</html>
