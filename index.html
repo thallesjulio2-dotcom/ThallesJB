@@ -1072,7 +1072,21 @@ window.addEventListener('load', () => {
   updateCalc();
   // foto já está inline no src do img
 });
-
+// ===== EXIT → oferta.html =====
+let exitShown = false;
+function showExit() {
+  if (exitShown) return;
+  exitShown = true;
+  window.location.href = 'oferta.html';
+}
+document.addEventListener('mouseleave', (e) => {
+  if (e.clientY <= 0) showExit();
+});
+let idleTimer = setTimeout(() => {
+  if (!exitShown) showExit();
+}, 45000);
+document.addEventListener('touchstart', () => clearTimeout(idleTimer));
+document.addEventListener('mousemove', () => clearTimeout(idleTimer));
 // ===== PROVA SOCIAL =====
 // Aparece 1x após 1 minuto, mensagem aleatória diferente a cada visita
 const leads = [
