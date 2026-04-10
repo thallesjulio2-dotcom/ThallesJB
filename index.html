@@ -272,51 +272,20 @@ footer p{font-size:13px;color:var(--muted)}
 .sp-action{font-size:11px;color:rgba(245,243,238,.5)}
 .sp-time{font-size:10px;color:#25D366;margin-top:2px}
 
-/* ===== QUIZ DE SAÍDA ===== */
-.exit-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;backdrop-filter:blur(6px)}
-.exit-overlay.show{opacity:1;pointer-events:all}
-.exit-popup{background:#141418;border:1px solid rgba(255,77,28,.25);max-width:520px;width:92%;position:relative;transform:scale(.88) translateY(28px);transition:transform .4s cubic-bezier(.34,1.56,.64,1);overflow:hidden}
-.exit-overlay.show .exit-popup{transform:scale(1) translateY(0)}
-.exit-popup-top{background:linear-gradient(135deg,rgba(155,89,208,.15),rgba(255,77,28,.1));padding:32px 36px 24px;border-bottom:1px solid rgba(255,255,255,.06)}
-.exit-popup-body{padding:28px 36px 36px}
-.exit-close{position:absolute;top:14px;right:16px;background:transparent;border:none;color:rgba(245,243,238,.3);font-size:20px;cursor:pointer;line-height:1;transition:color .2s;z-index:2}
-.exit-close:hover{color:rgba(245,243,238,.8)}
-.exit-step{display:none}
-.exit-step.active{display:block}
-/* Step badge */
-.exit-badge{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(155,89,208,.5);border-radius:100px;padding:4px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9b59d0;margin-bottom:18px}
-.exit-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#9b59d0;animation:blink 1.5s ease-in-out infinite}
-/* Emoji grande */
-.exit-emoji{font-size:40px;display:block;margin-bottom:12px;line-height:1}
-/* Título do quiz */
-.exit-question{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;line-height:1;margin-bottom:8px;color:var(--white)}
-.exit-question span{color:var(--accent)}
-.exit-sub{font-size:13px;color:rgba(245,243,238,.55);line-height:1.6;margin-bottom:0}
-/* Botões de escolha */
-.exit-choices{display:flex;flex-direction:column;gap:10px;margin-top:4px}
-.exit-choice{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:16px 20px;cursor:pointer;transition:all .2s;text-align:left;color:var(--white);font-size:14px;font-family:var(--font-body);border-radius:4px;width:100%}
-.exit-choice:hover{background:rgba(155,89,208,.12);border-color:rgba(155,89,208,.5);transform:translateX(4px)}
-.exit-choice-icon{font-size:22px;flex-shrink:0}
-.exit-choice-text{display:flex;flex-direction:column;gap:3px}
-.exit-choice-title{font-weight:600;font-size:14px}
-.exit-choice-desc{font-size:11px;color:rgba(245,243,238,.45)}
-/* Etapa 2 - resposta positiva (fechar) */
-.exit-step2-yes .exit-question{color:var(--white)}
-.exit-wa-big{display:flex;align-items:center;justify-content:center;gap:12px;background:#25D366;color:#fff;padding:18px 28px;font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:transform .15s,opacity .15s;border-radius:4px;margin-top:4px;width:100%;border:none;cursor:pointer}
-.exit-wa-big:hover{transform:translateY(-2px);opacity:.9}
-/* Etapa 2 - resposta negativa (preço alto) */
-.exit-desconto-box{background:linear-gradient(135deg,rgba(255,77,28,.12),rgba(155,89,208,.1));border:1px solid rgba(255,77,28,.3);padding:20px;border-radius:4px;margin-bottom:20px}
-.exit-desconto-num{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;color:var(--accent);line-height:1;letter-spacing:2px}
-.exit-desconto-label{font-size:12px;color:rgba(245,243,238,.55);letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
-.exit-wa-desconto{display:flex;align-items:center;justify-content:center;gap:12px;background:#25D366;color:#fff;padding:16px 28px;font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:transform .15s,opacity .15s;border-radius:4px;width:100%;border:none;cursor:pointer}
-.exit-wa-desconto:hover{transform:translateY(-2px);opacity:.9}
-.exit-skip-link{background:transparent;border:none;color:rgba(245,243,238,.28);font-size:11px;cursor:pointer;padding:10px;transition:color .2s;text-align:center;display:block;width:100%;margin-top:4px}
-.exit-skip-link:hover{color:rgba(245,243,238,.6)}
-/* Progresso */
-.exit-progress{display:flex;gap:6px;margin-bottom:20px}
-.exit-progress-dot{width:28px;height:3px;border-radius:2px;background:rgba(255,255,255,.12);transition:background .3s}
-.exit-progress-dot.done{background:#9b59d0}
-.exit-progress-dot.active{background:var(--accent)}
+// ===== EXIT → oferta.html =====
+let exitShown = false;
+function showExit() {
+  if (exitShown) return;
+  exitShown = true;
+  window.location.href = 'oferta.html';
+}
+document.addEventListener('mouseleave', (e) => {
+  if (e.clientY <= 0 && !exitShown) showExit();
+});
+let idleTimer = setTimeout(() => { if (!exitShown) showExit(); }, 45000);
+document.addEventListener('touchstart', () => { clearTimeout(idleTimer); });
+document.addEventListener('mousemove', () => { clearTimeout(idleTimer); });
+</script>
 
 </style>
 </head>
