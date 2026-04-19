@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>DriveLink - Autenticando...</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: sans-serif; background:#111214; color:#e8eaf0; 
+               display:flex; align-items:center; justify-content:center; 
+               height:100vh; flex-direction:column; gap:16px; }
+        .icon { font-size:48px; }
+        h2 { font-size:18px; color:#4f8ef7; }
+        p { font-size:13px; color:#888; }
+    </style>
+</head>
+<body>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const error = params.get('error');
+    const state = params.get('state');
+
+    if (code) {
+        // Envia o codigo para o painel via postMessage
+        if (window.opener) {
+            window.opener.postMessage({ type: 'drivelink_auth', code: code, state: state }, '*');
+        }
+        document.body.innerHTML = '<div class="icon">✅</div><h2>Conectado!</h2><p>Pode fechar esta janela e voltar ao Premiere.</p>';
+        setTimeout(() => window.close(), 2000);
+    } else {
+        if (window.opener) {
+            window.opener.postMessage({ type: 'drivelink_auth', error: error || 'Acesso negado' }, '*');
+        }
+        document.body.innerHTML = '<div class="icon">❌</div><h2>Erro</h2><p>' + (error || 'Acesso negado') + '</p>';
+        setTimeout(() => window.close(), 3000);
+    }
+</script>
+<div class="icon">⏳</div>
+<h2>Autenticando...</h2>
+<p>Aguarde um momento.</p>
+</body>
+</html>
